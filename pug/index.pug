@@ -1,0 +1,55 @@
+extends layout.pug
+
+block vars
+    - var page = { title: "Index", subtitle: "Test", author: "author", description: "description", tags: ["tag1", "tag2", "tag3"] }
+block content
+    .droparea
+        div
+            p Drag existing project folder into area to open.
+            span.btn(data-togglepopup="createsite") Create New Site
+block additional
+    div.popup.createsite
+        h1 Create New Site
+        .content
+            form
+                .wrap
+                    label(for="directory") Directory
+                    input(type="file" name="directory" id="directory")
+                .wrap
+                    label(for="project-name") Project Name
+                    input(type="text" name="project-name" id="project-name")
+                .tabholder
+                    p.info   
+                        i.fas.fa-info-circle 
+                        | You can either publish your website via FTP or GitHub Pages
+                    input(type="radio" name="publish-platform" value="ftp" id="ftp" checked) 
+                    label.tab-toggle(for="ftp") FTP
+                    input(type="radio" name="publish-platform" value="github" id="github")
+                    label.tab-toggle(for="github") GitHub 
+                    .tab.ftp
+                        .wrap
+                            label(for="ftp-host") Host 
+                            input(type="text" name="ftp-host" id="ftp-host")
+                        .wrap
+                            label(for="ftp-username") username 
+                            input(type="text" name="ftp-username" id="ftp-username")
+                        .wrap
+                            label(for="ftp-password") password 
+                            input(type="password" name="ftp-password" id="ftp-password")
+                        .wrap
+                            label(for="ftp-port") port 
+                            input(type="number" name="ftp-port" id="ftp-port")
+                        .wrap
+                            label(for="ftp-directory") directory 
+                            input(type="text" name="ftp-directory" id="ftp-directory")
+                    .tab.github
+                        .wrap
+                            label(for="github-username") Username
+                            input(type="text" name="github-username" id="github-username")
+                        .wrap
+                            label(for="github-password") password
+                            input(type="password" name="github-password" id="github-password")
+                        .wrap
+                            label(for="github-project-url") Project URL 
+                            input(type="url" name="github-project-url" id="github-project-url")
+                a.btn(href="dashboard.html").create Create Site

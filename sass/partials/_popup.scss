@@ -1,0 +1,35 @@
+.popup-open{
+    overflow: hidden;
+    > {
+        section, div:not(.popup), header, footer{
+            filter: blur(5px);
+        }
+    }
+}
+.popup{
+    display: none;
+    width: 80vw;
+    max-width: 1200px;
+    max-height: 80vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: $background-color;
+    color: $main-color;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 99;
+    overflow-y: auto;
+}
+
+.behind-popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $popup-backdrop;
+    z-index: 98;
+    cursor: pointer;
+}

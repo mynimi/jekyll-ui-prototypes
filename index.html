@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="expires" content="43200">
+    <title>Index - Test</title>
+    <meta name="description" content="#{page.description}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="#{page.author}">
+    <meta name="keywords" content="#{page.tags}">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <!-- head end-->
+  <body class="Index">
+    <header><b>UnHack for Jekyll</b>
+      <nav class="topnav"><a href="#">Go to Website</a><a href="#">Site Settings</a><a href="#">App Settings</a></nav>
+    </header>
+    <div class="container">
+      <div class="droparea">
+        <div>
+          <p>Drag existing project folder into area to open.</p><span class="btn" data-togglepopup="createsite">Create New Site</span>
+        </div>
+      </div>
+    </div>
+    <div class="popup createsite">
+      <h1>Create New Site</h1>
+      <div class="content">
+        <form>
+          <div class="wrap">
+            <label for="directory">Directory</label>
+            <input type="file" name="directory" id="directory">
+          </div>
+          <div class="wrap">
+            <label for="project-name">Project Name</label>
+            <input type="text" name="project-name" id="project-name">
+          </div>
+          <div class="tabholder">
+            <p class="info">  <i class="fas fa-info-circle"> </i>You can either publish your website via FTP or GitHub Pages</p>
+            <input type="radio" name="publish-platform" value="ftp" id="ftp" checked>
+            <label class="tab-toggle" for="ftp">FTP</label>
+            <input type="radio" name="publish-platform" value="github" id="github">
+            <label class="tab-toggle" for="github">GitHub </label>
+            <div class="tab ftp">
+              <div class="wrap">
+                <label for="ftp-host">Host </label>
+                <input type="text" name="ftp-host" id="ftp-host">
+              </div>
+              <div class="wrap">
+                <label for="ftp-username">username </label>
+                <input type="text" name="ftp-username" id="ftp-username">
+              </div>
+              <div class="wrap">
+                <label for="ftp-password">password </label>
+                <input type="password" name="ftp-password" id="ftp-password">
+              </div>
+              <div class="wrap">
+                <label for="ftp-port">port </label>
+                <input type="number" name="ftp-port" id="ftp-port">
+              </div>
+              <div class="wrap">
+                <label for="ftp-directory">directory </label>
+                <input type="text" name="ftp-directory" id="ftp-directory">
+              </div>
+            </div>
+            <div class="tab github">
+              <div class="wrap">
+                <label for="github-username">Username</label>
+                <input type="text" name="github-username" id="github-username">
+              </div>
+              <div class="wrap">
+                <label for="github-password">password</label>
+                <input type="password" name="github-password" id="github-password">
+              </div>
+              <div class="wrap">
+                <label for="github-project-url">Project URL </label>
+                <input type="url" name="github-project-url" id="github-project-url">
+              </div>
+            </div>
+          </div><a class="btn create" href="dashboard.html">Create Site</a>
+        </form>
+      </div>
+    </div>
+    <!-- development (do not ship this)-->
+    <script src="/js/fontawesome-all.js"></script>
+    <script src="/js/jquery-3.1.1.js"></script>
+    <script src="/js/main.js"></script>
+    <!-- production (compile scripts.min.js before shipping)-->
+    <!-- script(src="/js/scripts.min.js")-->
+  </body>
+  <!-- body end-->
+</html>
+<!-- html end-->

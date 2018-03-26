@@ -1,0 +1,137 @@
+@font-face { font-family: 'Roboto'; src: url("../fonts/Roboto-Light-webfont.eot"); src: url("../fonts/Roboto-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Light-webfont.woff") format("woff"), url("../fonts/Roboto-Light-webfont.ttf") format("truetype"), url("../fonts/Roboto-Light-webfont.svg#RobotoLight") format("svg"); font-weight: 300; font-style: normal; }
+
+@font-face { font-family: 'Roboto'; src: url("../fonts/Roboto-Regular-webfont.eot"); src: url("../fonts/Roboto-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Regular-webfont.woff") format("woff"), url("../fonts/Roboto-Regular-webfont.ttf") format("truetype"), url("../fonts/Roboto-Regular-webfont.svg#RobotoRegular") format("svg"); font-weight: 400; font-style: normal; }
+
+@font-face { font-family: 'Roboto'; src: url("../fonts/Roboto-Bold-webfont.eot"); src: url("../fonts/Roboto-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Bold-webfont.woff") format("woff"), url("../fonts/Roboto-Bold-webfont.ttf") format("truetype"), url("../fonts/Roboto-Bold-webfont.svg#RobotoBold") format("svg"); font-weight: 700; font-style: normal; }
+
+@font-face { font-family: 'Roboto'; src: url("../fonts/Roboto-LightItalic-webfont.eot"); src: url("../fonts/Roboto-LightItalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-LightItalic-webfont.woff") format("woff"), url("../fonts/Roboto-LightItalic-webfont.ttf") format("truetype"), url("../fonts/Roboto-LightItalic-webfont.svg#RobotoLightItalic") format("svg"); font-weight: 300; font-style: italic; }
+
+@font-face { font-family: 'Roboto'; src: url("../fonts/Roboto-Italic-webfont.eot"); src: url("../fonts/Roboto-Italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Italic-webfont.woff") format("woff"), url("../fonts/Roboto-Italic-webfont.ttf") format("truetype"), url("../fonts/Roboto-Italic-webfont.svg#RobotoItalic") format("svg"); font-weight: 400; font-style: italic; }
+
+@font-face { font-family: 'Roboto'; src: url("../fonts/Roboto-BoldItalic-webfont.eot"); src: url("../fonts/Roboto-BoldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-BoldItalic-webfont.woff") format("woff"), url("../fonts/Roboto-BoldItalic-webfont.ttf") format("truetype"), url("../fonts/Roboto-BoldItalic-webfont.svg#RobotoBoldItalic") format("svg"); font-weight: 700; font-style: italic; }
+
+@font-face { font-family: 'Source Code Pro'; src: url("../fonts/sourcecodepro-regular-webfont.eot"); src: url("../fonts/sourcecodepro-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/sourcecodepro-regular-webfont.woff") format("woff"), url("../fonts/sourcecodepro-regular-webfont.ttf") format("truetype"), url("../fonts/sourcecodepro-regular-webfont.svg#sourcecodeproregular") format("svg"); font-weight: 400; font-style: normal; }
+
+@font-face { font-family: 'Source Code Pro'; src: url("../fonts/sourcecodepro-bold-webfont.eot"); src: url("../fonts/sourcecodepro-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/sourcecodepro-bold-webfont.woff") format("woff"), url("../fonts/sourcecodepro-bold-webfont.ttf") format("truetype"), url("../fonts/sourcecodepro-bold-webfont.svg#sourcecodeprobold") format("svg"); font-weight: 700; font-style: normal; }
+
+html, body, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, .btn, abbr, acronym, address, big, cite, code, kbd, pre, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, tt, var, b, u, i, center, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+body { line-height: 1; }
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+b, strong { font-weight: bold; }
+
+i, em { font-style: italic; }
+
+html, body { font-family: "Roboto", "Calibri", "Arial", sans-serif; font-size: 19px; font-weight: 300; }
+
+body { line-height: 1.6; background-color: #fff; color: #000; }
+
+h1, h2, h3, h4, h5, h6 { line-height: 1; padding: 10px 0px; font-weight: 700; }
+
+h1 { font-size: 2.35em; }
+
+h2 { font-size: 1.6em; }
+
+h3 { font-size: 1.45em; }
+
+h4 { font-size: 1.25em; }
+
+h5 { font-size: 1.08em; }
+
+h6 { font-size: 1em; }
+
+a, .btn { -webkit-transition: .3s all; -o-transition: .3s all; transition: .3s all; text-decoration: none; color: #42ADDB; }
+
+a:hover, .btn:hover { cursor: pointer; color: #C5D5DB; }
+
+img { max-width: 100%; height: auto; }
+
+code, kbd, pre { font-family: 'Source Code Pro', 'Courier New', monospace; }
+
+p + p { margin-top: 5px; }
+
+.container { max-width: 1200px; width: 80%; background: transparent; display: block; position: relative; margin: 0px auto; }
+
+.hidden { display: none; }
+
+.btn { border: 2px solid currentColor; padding: 3px 5px; border-radius: 3px; position: relative; top: 12px; line-height: 2; }
+
+p + h1, p + h2, p + h3, p + h4 { margin-top: 20px; }
+
+header { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; background: #000; color: #fff; width: 100%; padding: 5px 10px; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+header a, header .btn { padding: 0 5px; color: rgba(255, 255, 255, 0.7); -webkit-transition: .3s all ease; -o-transition: .3s all ease; transition: .3s all ease; }
+
+header a:hover, header .btn:hover { color: #fff; }
+
+.Index body { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 100vh; }
+
+.Index .container { -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+.droparea { width: 100%; margin: 30px; height: 60vh; border: 2px dashed #b3b3b3; position: relative; }
+
+.droparea div { position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); text-align: center; }
+
+h1, h2 { width: 100%; }
+
+.content { width: 100%; }
+
+.info { background: rgba(58, 100, 149, 0.1); padding: 5px; border: 1px solid rgba(58, 100, 149, 0.5); margin: 10px 0; }
+
+.info .svg-inline--fa { margin-right: 5px; }
+
+.popup-open { overflow: hidden; }
+
+.popup-open > section, .popup-open > div:not(.popup), .popup-open > header, .popup-open > footer { -webkit-filter: blur(5px); filter: blur(5px); }
+
+.popup { display: none; width: 80vw; max-width: 1200px; max-height: 80vh; position: fixed; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); background: #fff; color: #000; padding: 20px; -webkit-box-sizing: border-box; box-sizing: border-box; z-index: 99; overflow-y: auto; }
+
+.behind-popup { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.1); z-index: 98; cursor: pointer; }
+
+.tabholder { margin: 20px 0; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+.tabholder p { width: 100%; }
+
+.tabholder > label { background: #dddddd; color: black; width: auto; padding: 5px 10px; cursor: pointer; -webkit-transition: .3s all ease; -o-transition: .3s all ease; transition: .3s all ease; }
+
+.tabholder > label:hover { background: #aaaaaa; color: black; }
+
+.tabholder input[type=radio] { opacity: 0; position: absolute; left: -9999px; }
+
+.tabholder .tab { background: #F6F6F6; color: black; padding: 15px; width: 100%; -webkit-transition: .3s all ease; -o-transition: .3s all ease; transition: .3s all ease; }
+
+.tabholder .wrap label.up { background: #F6F6F6; }
+
+.tabholder #ftp:checked + label { background: #F6F6F6; }
+
+.tabholder #ftp:checked ~ .tab.ftp { display: block; }
+
+.tabholder #ftp ~ .tab.ftp { display: none; }
+
+.tabholder #github:checked + label { background: #F6F6F6; }
+
+.tabholder #github:checked ~ .tab.github { display: block; }
+
+.tabholder #github ~ .tab.github { display: none; }
+
+input:not([type="submit"]):not([type="button"]) { width: 100%; }
+
+.wrap { position: relative; border: 1px solid #C5D5DB; margin: 15px 0; padding: 10px; -webkit-transition: .3s all ease; -o-transition: .3s all ease; transition: .3s all ease; }
+
+.wrap.focus { border-color: #42ADDB; }
+
+.wrap.focus label { color: #42ADDB !important; }
+
+.wrap input { background: transparent; font-size: 19px; padding: 0; border: 0; }
+
+.wrap label { position: absolute; top: auto; left: 10px; -webkit-transition: .3s all ease; -o-transition: .3s all ease; transition: .3s all ease; color: #000; }
+
+.wrap label.up { background: #fff; font-size: .8em; top: 0; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); color: #C5D5DB; }

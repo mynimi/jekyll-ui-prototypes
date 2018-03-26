@@ -1,0 +1,41 @@
+input:not([type="submit"]):not([type="button"]){
+    width: 100%;
+}
+
+.wrap{
+    position: relative;
+    border: $input-border;
+    margin: 15px 0;
+    padding: 10px;
+    transition: .3s all ease;
+
+    &.focus{
+        border-color: $input-focus-color;
+        label{
+            color: $input-focus-color !important;
+        }
+    }
+
+    input{
+        background: transparent;
+        font-size: $root-font-size;
+        padding: 0;
+        border: 0;
+    }
+
+    label{
+        position: absolute;
+        top: auto;
+        left: 10px;
+        transition: .3s all ease;
+        color: $main-color;
+
+        &.up{
+            background: $background-color;
+            font-size: .8em;
+            top: 0;
+            transform: translateY(-50%);
+            color: $input-label-color;
+        }
+    }
+}

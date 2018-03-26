@@ -1,0 +1,90 @@
+// Shortcuts
+//-----------
+$noborder: 0 solid transparent;
+
+// SETTINGS FOR BASE-STYLE
+//-------------------
+
+// yes/no variables (use yes or no as values)
+//--------------------------------------------
+
+// if set to yes a background-color will be added to body
+$background-color-setting: yes;
+
+// if set to yes a transition will be applied to links
+$link-transition: yes;
+
+// decide if links will be underlined or not
+$link-line-default: no;
+$link-line-hover: no;
+
+// if set to yes, each paragraph following after another,
+// will have a margin-top
+$paragraph-gap: yes;
+
+// if set to yes, settings for a container class will be added
+$container-settings: yes;
+
+
+// String Variables (use strings as values | for Font Variables: Don't forget to include the fonts)
+//------------------------------------------
+
+$main-font: 'Roboto', 'Calibri', 'Arial', sans-serif;
+
+// set to $main-font if you don't want your headings to use another font
+$headings-font: $main-font;
+
+// use values from text-transform [none|capitalize|uppercase|lowercase|initial|inherit]
+$headings-text-transform: none;
+
+$code-font: 'Source Code Pro', Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+
+// size variables (use numbers as values (units as indicated ))
+
+// font-weights, alternatively use: [light, normal, bold]
+$main-font-weight: 300;
+
+// set $main-font-weight if you don't want your headings to use another font-weight
+$headings-font-weight: 700;
+
+// use px here
+$root-font-size: 19px;
+
+// do not add a unit here
+$basic-line-height: 1.6;
+
+$paragraph-gap-size: 5px;
+
+$container-class-name: 'container';
+$container-background-color: transparent;
+$container-max-width: 1200px; // use px here
+$container-width: 80%; // use % here
+
+// Paddings
+//----------
+$header-padding: 5px 10px;
+
+// color variables (use colors as values)
+//----------------------------------------
+$main-color: $black;
+$link-color: $accent;
+$link-hover-color: $accent-alt;
+$background-color: $white;
+$header-background: $black;
+$header-color: $white;
+$header-link-color: rgba($white, .7);
+$header-link-hover: $white;
+
+$dragdroparea-border: 2px dashed darken($white, 30%);
+
+$info-blue: #3a6495;
+
+$tab-area-active-bg: $lightgray;
+$tab-inactive-bg: $gray;
+$tab-hover-bg: $mediumgray;
+
+$popup-backdrop: rgba($black, .1);
+
+$input-label-color: $accent-alt;
+$input-border: 1px solid $accent-alt;
+$input-focus-color: $accent;

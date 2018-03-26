@@ -1,0 +1,193 @@
+// PROJECT MIXINS
+//---------------------------------------------------------------------
+
+
+// TOOLBOX MIXINS
+//---------------------------------------------------------------------
+
+// without variables
+//------------------
+@mixin clearfix() {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+// @include clearfix()
+// use on float parents
+
+@mixin center() {
+    display: block;
+    position: relative;
+    margin: 0px auto;
+}
+// @include center()
+// use to center elements
+
+
+// with variables
+//---------------
+@mixin flexbox($d, $w, $j, $a) {
+    display: flex;
+    flex-direction: $d;
+    flex-wrap: $w;
+    justify-content: $j;
+    align-items: $a;
+}
+// @include flexbox(direction, wrap, justify, align)
+
+@mixin gridCreator($rows, $columns, $area-list, $arealayout...){
+    $a: "";
+    @each $area in $arealayout {
+        $a: $a + '"'+$area+'"';
+    }
+
+    display: grid;
+    $grid-template-rows: $rows;
+    grid-template-columns: $columns;
+    grid-template-areas: unquote($a);
+
+    @each $area in $area-list{
+        .#{$area}{
+            grid-area: $area;
+        }
+    }
+}
+// @include gridCreator(
+//     "auto auto auto", 
+//     "auto auto auto",
+//     (area-1, area-2, area-3, area-4, area-5, area-6),
+//     'area-1 area-2 area-3',
+//     'area-4 area-4 area-4',
+//     'area-5 area-6 area-6');
+
+
+@mixin rowMachine($n, $ms, $mb:$ms) {
+    width: calc((100% - (#{$n} - 1) * #{$ms}) / #{$n});
+    &:nth-of-type(n) {
+        margin-bottom: $mb;
+        margin-right: $ms;
+    }
+    &:nth-of-type(#{$n}n) {
+        margin-right: 0;
+    }
+}
+// @include rowMachine(items per row, marginside, (marginbottom))
+// use for grids
+
+@mixin paddinghack($cw, $rw, $rh, $c:null) {
+    position: relative;
+    width: $cw;
+    height: 0;
+    padding: (($rh / $rw) * $cw) 0 0 0;
+    display: block;
+    @if $c != null {
+        #{$c} {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+// @include paddinghack(width, ratiowidth, ratioheight, (childelement))
+// use for fixed aspect ratios
+
+@mixin triangle($bw, $dir, $c) {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    @if $dir == right {
+        border-color: transparent transparent transparent $c;
+    }
+    @if $dir == left {
+        border-color: transparent $c transparent transparent;
+    }
+    @if $dir == bottom or $dir == down {
+        border-color: $c transparent transparent transparent;
+    }
+    @if $dir == top or $dir == up {
+        border-color: transparent transparent $c transparent;
+    }
+    border-width: $bw;
+}
+// @include triangle(border-width, direction[use: right, left, top/up, bottom/down], color);
+// basic triangle, best used on pseudo-elements
+
+@mixin triangle-ra($w, $h, $dir, $c) {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    @if $dir == bottom-left {
+        border-color: transparent transparent transparent $c;
+        border-width: $h 0 0 $w;
+    }
+    @if $dir == bottom-right {
+        border-color: transparent transparent $c transparent;
+        border-width: 0 0 $h $w;
+    }
+    @if $dir == top-left {
+        border-color: $c transparent transparent transparent;
+        border-width: $h $w 0 0;
+    }
+    @if $dir == top-right {
+        border-color: transparent $c transparent transparent;
+        border-width: 0px $w $h 0px;
+    }
+}
+// @include triangle-ra(width, height, direction[use: bottom-left, bottom-right, top-left, top-right], color);
+// Right-Angled Triangle, best on pseudo-elements
+
+@mixin triangle-eqla($sl, $dir, $c) {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    @if $dir == right {
+        border-color: transparent transparent transparent $c;
+    }
+    @if $dir == left {
+        border-color: transparent $c transparent transparent;
+    }
+    @if $dir == bottom or $dir == down {
+        border-color: $c transparent transparent transparent;
+    }
+    @if $dir == top or $dir == up {
+        border-color: transparent transparent $c transparent;
+    }
+    @if $dir == right or $dir == left {
+        border-width: ($sl/2) (1.73205*($sl/2));
+    }
+    @if $dir == top or $dir == down or $dir == bottom or $dir == up {
+        border-width: (1.73205*($sl/2)) ($sl/2);
+    }
+}
+// @include tirangle-eqla(sidelength, direction, color)
+// Equilateral Triangle, best on pseudo-elements
+
+@mixin flag($w, $h, $p, $dir, $c) {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    @if $dir == top or $dir == up {
+        border-color: transparent $c $c $c;
+        border-width: $p ($w / 2) ($h - $p);
+    }
+    @if $dir == right {
+        border-color: $c transparent $c $c;
+        border-width: ($h / 2) $p ($h / 2) ($w - $p);
+    }
+    @if $dir == bottom or $dir == down {
+        border-color: $c $c transparent $c;
+        border-width: ($h - $p) ($w / 2) $p;
+    }
+    @if $dir == left {
+        border-color: $c $c $c transparent;
+        border-width: ($h / 2) ($w - $p) ($h / 2) $p;
+    }
+}
+// @include flag(width, height, peak, direction, color)
+// flag, best on pseudo-elements, use for ribbons
