@@ -80,6 +80,7 @@ $header-color: $white;
 $header-link-color: rgba($white, .7);
 $header-link-hover: $white;
 $sidenav-background: $mediumgray;
+$table-row-bg: darken($white, 5%);
 
 $dragdroparea-border: 2px dashed darken($white, 30%);
 
@@ -96,6 +97,7 @@ $input-border: 1px solid $accent-alt;
 $input-focus-color: $accent;
 
 $card-shadow: 0px 3px 6px 0px rgba(black, .1);
+$table-shadow: 0px 2px 4px 0px rgba(black, .1);
 $card-background: $white;
 
 $sidenav-width: 250px;

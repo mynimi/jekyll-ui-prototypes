@@ -32,7 +32,7 @@ i, em { font-style: italic; }
 
 html, body { font-family: "Roboto", "Calibri", "Arial", sans-serif; font-size: 19px; font-weight: 300; }
 
-body { line-height: 1.6; background-color: #090909; color: white; }
+body { line-height: 1.6; background-color: #090909; color: white; margin-top: 45px; }
 
 h1, h2, h3, h4, h5, h6 { line-height: 1; padding: 10px 0px; font-weight: 700; }
 
@@ -58,7 +58,7 @@ code, kbd, pre { font-family: 'Source Code Pro', 'Courier New', monospace; }
 
 p + p { margin-top: 5px; }
 
-.container { max-width: 1200px; width: 80%; background: transparent; display: block; position: relative; margin: 0px auto; }
+.container { max-width: 1200px; width: 80%; background: transparent; display: block; position: relative; margin: 0px auto; padding: 30px 0; }
 
 .hidden { display: none; }
 

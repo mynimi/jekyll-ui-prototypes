@@ -1,0 +1,68 @@
+table{
+    width: 100%;
+    th{
+        text-align: left;
+        font-size: .9em;
+        font-weight: bold;
+        padding: 3px;
+    }
+    td{
+        padding: 5px;
+        background: $table-row-bg;
+        color: black-or-white($table-row-bg);
+        border-top: 5px solid $card-background;
+        transition: .3 all ease;
+
+        &:last-of-type(){
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            padding-right: 20px;
+        }
+
+        &:first-of-type(){
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            padding-left: 20px;
+        }
+    }
+    tr{
+        transition: .3 all ease;
+        &:hover{
+            td{
+                transition: .3 all ease;
+                background: darken($table-row-bg, 5%);
+                color: black-or-white(darken($table-row-bg, 5%));
+            }
+        }
+    }
+    thead{
+        position: relative;
+        z-index: 1;
+        th{
+            padding-bottom: 5px;
+        }
+
+        &:before{
+            content: '';
+            width: 100%;
+            height: calc(100% - 10px);
+            // background: red;
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            box-shadow: $table-shadow;
+            z-index: -1;
+        }
+        &:after{
+            content: '';
+            width: calc(100% + 10px);
+            height: 100%;
+            background: $card-background;
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            z-index: -1;
+        }
+    }
+
+}

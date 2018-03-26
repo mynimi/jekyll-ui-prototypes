@@ -32,7 +32,7 @@ i, em { font-style: italic; }
 
 html, body { font-family: "Roboto", "Calibri", "Arial", sans-serif; font-size: 19px; font-weight: 300; }
 
-body { line-height: 1.6; background-color: #F6F6F6; color: #000; }
+body { line-height: 1.6; background-color: #F6F6F6; color: #000; margin-top: 45px; }
 
 h1, h2, h3, h4, h5, h6 { line-height: 1; padding: 10px 0px; font-weight: 700; }
 
@@ -58,7 +58,7 @@ code, kbd, pre { font-family: 'Source Code Pro', 'Courier New', monospace; }
 
 p + p { margin-top: 5px; }
 
-.container { max-width: 1200px; width: 80%; background: transparent; display: block; position: relative; margin: 0px auto; }
+.container { max-width: 1200px; width: 80%; background: transparent; display: block; position: relative; margin: 0px auto; padding: 30px 0; }
 
 .hidden { display: none; }
 
@@ -165,3 +165,25 @@ input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type
 .sidenav a:hover, .sidenav .btn:hover { opacity: .7; }
 
 .has-sidenav { margin-left: 250px; }
+
+table { width: 100%; }
+
+table th { text-align: left; font-size: .9em; font-weight: bold; padding: 3px; }
+
+table td { padding: 5px; background: #f2f2f2; color: black; border-top: 5px solid #fff; -webkit-transition: .3 all ease; -o-transition: .3 all ease; transition: .3 all ease; }
+
+table td:last-of-type { border-top-right-radius: 15px; border-bottom-right-radius: 15px; padding-right: 20px; }
+
+table td:first-of-type { border-top-left-radius: 15px; border-bottom-left-radius: 15px; padding-left: 20px; }
+
+table tr { -webkit-transition: .3 all ease; -o-transition: .3 all ease; transition: .3 all ease; }
+
+table tr:hover td { -webkit-transition: .3 all ease; -o-transition: .3 all ease; transition: .3 all ease; background: #e6e6e6; color: black; }
+
+table thead { position: relative; z-index: 1; }
+
+table thead th { padding-bottom: 5px; }
+
+table thead:before { content: ''; width: 100%; height: calc(100% - 10px); position: absolute; bottom: 5px; left: 0; -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1); box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1); z-index: -1; }
+
+table thead:after { content: ''; width: calc(100% + 10px); height: 100%; background: #fff; position: absolute; top: -5px; left: -5px; z-index: -1; }

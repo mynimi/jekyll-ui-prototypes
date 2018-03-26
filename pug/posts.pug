@@ -1,0 +1,41 @@
+extends layout.pug
+
+block vars
+    - var page = { title: "Posts", subtitle: "Test", author: "author", description: "description", tags: ["tag1", "tag2", "tag3"] }
+    include includes/postlist.pug
+
+block content
+    //- mixin post-card(post)
+    //-     .card
+    //-         .card-content
+    //-             h2.movie-title= post.title
+    //- for post in postList
+    //-     +post-card(post)
+    .middle
+        h1
+            span(lang="en") Posts
+            span(lang="de") Beiträge
+        .cardholder
+            .card
+                .card-content
+                    span=postList.length 
+                        | &nbsp;
+                        span(lang="en") Posts
+                        span(lang="de") Beiträge
+                    table
+                        thead
+                            tr
+                                th Title
+                                th Tags
+                                th Date
+                                th Status
+                                th Edit
+                        tbody
+                            for post in postList
+                                tr
+                                    td=post.title
+                                    td=post.tags
+                                    td=post.date
+                                    td=post.status 
+                                    td
+                                        a(href="#") Edit
