@@ -4,6 +4,24 @@ $(document).ready(function(){
     if(!getCookie('siteSettings')){
         var siteSettings = {};
     }
+    if(!getCookie('language')){
+        setCookie('language', 'en');
+    }
+    if(getCookie('language') == 'en'){
+        $('[lang="en"]').css('display', 'inline-block');
+        $('[lang="de"]').hide();
+    } else{
+        $('[lang="de"]').css('display', 'inline-block');
+        $('[lang="en"]').hide();
+    }
+    
+    $('input[name="lang"][value="'+getCookie('language')+'"]').prop('checked', true);
+
+    $('.saveappsettings').click(function(){
+        var lang = $('input[name="lang"]:checked').val();
+        setCookie('language', lang, 1);
+        location.reload();
+    });
 
     if(getCookie('siteSettings')){
         var s = JSON.parse(getCookie("siteSettings"));

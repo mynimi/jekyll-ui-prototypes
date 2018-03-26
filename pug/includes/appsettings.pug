@@ -1,0 +1,44 @@
+.popup.appsettings
+    h1 
+        span(lang="en") App Settings
+        span(lang="de") App Einstellungen
+    .content
+        form
+            div.checkbox.input
+                .label Advanced View
+                p.info   
+                    i.fas.fa-info-circle 
+                    span(lang="en") Advanced View Enables the File Tree View and Code Editors. This View is only recommended to Users Familiar with Code. It is very easy to break things.
+                    span(lang="de") Advanced View schaltet Code Editoren und eine Tree-View frei. Sie ist nur den Benutzern empfohlen, die mit Code vertraut sind.
+                
+                input(type="checkbox" name="advancedview" id="advancedview")
+                label(for="advancedview")
+                    span(lang="en") enable Advanced View
+                    span(lang="de") Advanced View aktivieren
+            div.radio.input
+                .label
+                    span(lang="en") Language
+                    span(lang="de") Sprache
+                input(type="radio" name="lang" id="eng" value="en")
+                label(for="eng")
+                    span(lang="en") English (EN)
+                    span(lang="de") Englisch (EN)
+                br
+                input(type="radio" name="lang" id="ger" value="de")
+                label(for="ger")
+                    span(lang="en") German (DE)
+                    span(lang="de") Deutsch (DE)
+            div.radio.input
+                .label UI Skin
+                input(type="radio" name="skin" id="light" value="main")
+                label(for="light")
+                    span(lang="en") Light
+                    span(lang="de") Hell
+                br
+                input(type="radio" name="skin" id="dark" value="dark")
+                label(for="dark")
+                    span(lang="en") Dark
+                    span(lang="de") Dunkel
+            a.btn(href="#").saveappsettings
+                span(lang="en") Save Settings
+                span(lang="de") Einstellungen speichern

@@ -5,15 +5,13 @@ doctype html
 html
     include includes/head.pug
 
-    body(class=page.title).has-sidenav
+    body(class=page.title)
         header
             b UnHack for Jekyll
             include includes/topnav.pug 
         .container
             block content
         block additional
-
-        include includes/sidenav.pug 
         
         include includes/sitesettings.pug
         include includes/appsettings.pug

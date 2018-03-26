@@ -128,8 +128,8 @@ pre{
     padding: 3px 5px;
     border-radius: 3px;
     position: relative;
-    top: 12px;
     line-height: 2;
+    margin: 5px;
 }
 
 p + {
@@ -149,6 +149,10 @@ header{
     width: 100%;
     padding: $header-padding;
     box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 97;
 
     a{
         padding: 0 5px;
@@ -160,17 +164,27 @@ header{
     }
 }
 
-.Index{
-    body{
-        @include flexbox(column, wrap, space-between, center);
-        height: 100vh;
-    }
+.Index,
+.Dashboard{
+    @include flexbox(column, wrap, space-between, center);
+    height: 100vh;
     .container{
         flex-grow: 1;
-        @include flexbox(row, wrap, center, center);
+        @include flexbox(column, wrap, center, center);
+    }
+    .middle{
+        width: 100%;
     }
 }
 
+.Index{
+    .topnav{
+        .live,
+        .site{
+            display: none;
+        }
+    }
+}
 .droparea{
     width: 100%;
     margin: 30px;

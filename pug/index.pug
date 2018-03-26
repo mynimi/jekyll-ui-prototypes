@@ -1,27 +1,38 @@
-extends layout.pug
+extends nosidenav.pug
 
 block vars
     - var page = { title: "Index", subtitle: "Test", author: "author", description: "description", tags: ["tag1", "tag2", "tag3"] }
 block content
     .droparea
         div
-            p Drag existing project folder into area to open.
-            span.btn(data-togglepopup="createsite") Create New Site
+            p 
+                span(lang="en") Drag existing project folder into area to open.
+                span(lang="de") Ziehe bestehendes Projekt in das Feld um es zu öffnen.
+            span.btn(data-togglepopup="createsite") 
+                span(lang="en") Create New Site
+                span(lang="de") Neue Seite erstellen
 block additional
-    div.popup.createsite
-        h1 Create New Site
+    .popup.createsite
+        h1 
+            span(lang="en") Create New Site
+            span(lang="de") Neue Seite erstellen
         .content
             form
                 .wrap
-                    label(for="directory") Directory
+                    label(for="directory") 
+                        span(lang="en") Directory
+                        span(lang="de") Ordner
                     input(type="file" name="directory" id="directory")
                 .wrap
-                    label(for="project-name") Project Name
+                    label(for="project-name") 
+                        span(lang="en") Project Name
+                        span(lang="de") Projektname
                     input(type="text" name="project-name" id="project-name")
                 .tabholder
                     p.info   
                         i.fas.fa-info-circle 
-                        | You can either publish your website via FTP or GitHub Pages
+                        span(lang="en") You can either publish your website via FTP or GitHub Pages
+                        span(lang="de") Du kannst deine Seite entweder über FTP oder GitHub Pages veröffentlichen 
                     input(type="radio" name="publish-platform" value="ftp" id="ftp" checked) 
                     label.tab-toggle(for="ftp") FTP
                     input(type="radio" name="publish-platform" value="github" id="github")
@@ -31,25 +42,39 @@ block additional
                             label(for="ftp-host") Host 
                             input(type="text" name="ftp-host" id="ftp-host")
                         .wrap
-                            label(for="ftp-username") username 
+                            label(for="ftp-username") 
+                                span(lang="en") Username 
+                                span(lang="de") Benutzername 
                             input(type="text" name="ftp-username" id="ftp-username")
                         .wrap
-                            label(for="ftp-password") password 
+                            label(for="ftp-password") 
+                                span(lang="en") Password 
+                                span(lang="de") Passwort 
                             input(type="password" name="ftp-password" id="ftp-password")
                         .wrap
-                            label(for="ftp-port") port 
+                            label(for="ftp-port") Port 
                             input(type="number" name="ftp-port" id="ftp-port")
                         .wrap
-                            label(for="ftp-directory") directory 
+                            label(for="ftp-directory") 
+                                span(lang="en") Directory 
+                                span(lang="de") Ordner 
                             input(type="text" name="ftp-directory" id="ftp-directory")
                     .tab.github
                         .wrap
-                            label(for="github-username") Username
+                            label(for="github-username")
+                                span(lang="en") Username 
+                                span(lang="de") Benutzername 
                             input(type="text" name="github-username" id="github-username")
                         .wrap
-                            label(for="github-password") password
+                            label(for="github-password")
+                                span(lang="en") Password 
+                                span(lang="de") Passwort 
                             input(type="password" name="github-password" id="github-password")
                         .wrap
-                            label(for="github-project-url") Project URL 
+                            label(for="github-project-url")  
+                                span(lang="en") Project URL
+                                span(lang="de") Projekt URL
                             input(type="url" name="github-project-url" id="github-project-url")
-                a.btn(href="dashboard.html").create Create Site
+                a.btn(href="dashboard.html").create 
+                    span(lang="en") Create Site
+                    span(lang="de") Seite erstellen

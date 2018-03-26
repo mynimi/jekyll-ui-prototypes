@@ -1,0 +1,13 @@
+.cardholder{
+    @include alwaysFull('.card', $cards-per-row, $card-breakpoint-1, $card-breakpoint-2, $card-breakpoint-3);
+    .card{
+        padding: 10px;
+        box-sizing: border-box;
+        .card-content{
+            box-shadow: $card-shadow;
+            background: $card-background;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    }
+}

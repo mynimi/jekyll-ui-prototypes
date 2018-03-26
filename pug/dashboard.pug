@@ -3,49 +3,42 @@ extends layout.pug
 block vars
     - var page = { title: "Dashboard", subtitle: "Test", author: "author", description: "description", tags: ["tag1", "tag2", "tag3"] }
 block content
-    div
-        h1 This is your Dashboard
-        h2 This is the Information you entered
-        .content
-            form
-                .wrap
-                    label(for="directory-path") Directory
-                    input(type="text" name="directory-path" id="directory-path")
-                .wrap
-                    label(for="project-name") Project Name
-                    input(type="text" name="project-name" id="project-name")
-                .tabholder
-                    input(type="radio" name="publish-platform" value="ftp" id="ftp" checked) 
-                    label.tab-toggle(for="ftp") FTP
-                    input(type="radio" name="publish-platform" value="github" id="github")
-                    label.tab-toggle(for="github") GitHub 
-                    .tab.ftp
-                        .wrap
-                            label(for="ftp-host") Host 
-                            input(type="text" name="ftp-host" id="ftp-host")
-                        .wrap
-                            label(for="ftp-username") username 
-                            input(type="text" name="ftp-username" id="ftp-username")
-                        .wrap
-                            label(for="ftp-password") password 
-                            input(type="password" name="ftp-password" id="ftp-password")
-                        .wrap
-                            label(for="ftp-port") port 
-                            input(type="number" name="ftp-port" id="ftp-port")
-                        .wrap
-                            label(for="ftp-directory") directory 
-                            input(type="text" name="ftp-directory" id="ftp-directory")
-                    .tab.github
-                        .wrap
-                            label(for="github-username") Username
-                            input(type="text" name="github-username" id="github-username")
-                        .wrap
-                            label(for="github-password") password
-                            input(type="password" name="github-password" id="github-password")
-                        .wrap
-                            label(for="github-project-url") Project URL 
-                            input(type="url" name="github-project-url" id="github-project-url")
-                a.btn(href="dashboard.html").create Save Changes
+    .middle
+        h1 Dashboard
+        .cardholder
+            .card
+                .card-content
+                    h2 
+                        span(lang="en") Content Creation
+                        span(lang="de") Inhalte Erfassen
+                    a.btn(href="newpage.html")
+                        span(lang="en") Create New Page
+                        span(lang="de") Neue Seite erstellen
+                    a.btn(href="newpost.html")
+                        span(lang="en") Create New Post
+                        span(lang="de") Neuen Beitrag erstellen
+            .card
+                .card-content
+                    h2 
+                        span(lang="en") Site Setup
+                        span(lang="de") Setup
+                    a.btn(href="themeoptions.html")
+                        span(lang="en") Theme Options
+                        span(lang="de") Theme Optionen
+                    a.btn(href="editconfig.html")
+                        span(lang="en") Configuration
+                        span(lang="de") Konfiguration
+            .card
+                .card-content
+                    h2 
+                        span(lang="en") Live Page
+                        span(lang="de") Live Seite
+                    a.btn(href="#")
+                        span(lang="en") Open Preview
+                        span(lang="de") Vorschau öffnen
+                    a.btn(href="#")
+                        span(lang="en") Publish Site
+                        span(lang="de") Seite veröffentlichen
 
 block additional
     

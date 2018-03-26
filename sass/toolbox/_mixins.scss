@@ -55,7 +55,7 @@
     }
 }
 // @include gridCreator(
-//     "auto auto auto", 
+//     "auto auto auto",
 //     "auto auto auto",
 //     (area-1, area-2, area-3, area-4, area-5, area-6),
 //     'area-1 area-2 area-3',
@@ -191,3 +191,23 @@
 }
 // @include flag(width, height, peak, direction, color)
 // flag, best on pseudo-elements, use for ribbons
+
+
+@mixin alwaysFull($itemSelector, $itemsPerRow, $breakpoints...){
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+
+    #{$itemSelector}{
+        flex: 1 0 calc(100% / #{$itemsPerRow});
+
+        @if length($breakpoints) != 0 {
+            @each $collapse in $breakpoints {
+                $i: $itemsPerRow - index($breakpoints, $collapse);
+                @media screen and (max-width: $collapse){
+                    flex: 1 0 calc(100% / #{$i});
+                }
+            }
+        }
+    }
+}

@@ -1,4 +1,10 @@
 nav.topnav
-    a(href="#") Go to Website
-    a(href="#") Site Settings
-    a(href="#") App Settings
+    a(href="#").live
+        span(lang="en") Go to Website
+        span(lang="de") Website öffnen
+    a(href="#" data-togglepopup="sitesettings").site 
+        span(lang="en") Site Settings
+        span(lang="de") Seiteneinstellungen
+    a(href="#" data-togglepopup="appsettings").app 
+        span(lang="en") App Settings
+        span(lang="de") App Einstellungen

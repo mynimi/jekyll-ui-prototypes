@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html>
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="expires" content="43200">
@@ -13,29 +13,29 @@
   <!-- head end-->
   <body class="Index">
     <header><b>UnHack for Jekyll</b>
-      <nav class="topnav"><a href="#">Go to Website</a><a href="#">Site Settings</a><a href="#">App Settings</a></nav>
+      <nav class="topnav"><a class="live" href="#"><span lang="en">Go to Website</span><span lang="de">Website öffnen</span></a><a class="site" href="#" data-togglepopup="sitesettings"> <span lang="en">Site Settings</span><span lang="de">Seiteneinstellungen</span></a><a class="app" href="#" data-togglepopup="appsettings"> <span lang="en">App Settings</span><span lang="de">App Einstellungen</span></a></nav>
     </header>
     <div class="container">
       <div class="droparea">
         <div>
-          <p>Drag existing project folder into area to open.</p><span class="btn" data-togglepopup="createsite">Create New Site</span>
+          <p> <span lang="en">Drag existing project folder into area to open.</span><span lang="de">Ziehe bestehendes Projekt in das Feld um es zu öffnen.</span></p><span class="btn" data-togglepopup="createsite"> <span lang="en">Create New Site</span><span lang="de">Neue Seite erstellen</span></span>
         </div>
       </div>
     </div>
     <div class="popup createsite">
-      <h1>Create New Site</h1>
+      <h1> <span lang="en">Create New Site</span><span lang="de">Neue Seite erstellen</span></h1>
       <div class="content">
         <form>
           <div class="wrap">
-            <label for="directory">Directory</label>
+            <label for="directory"> <span lang="en">Directory</span><span lang="de">Ordner</span></label>
             <input type="file" name="directory" id="directory">
           </div>
           <div class="wrap">
-            <label for="project-name">Project Name</label>
+            <label for="project-name"> <span lang="en">Project Name</span><span lang="de">Projektname</span></label>
             <input type="text" name="project-name" id="project-name">
           </div>
           <div class="tabholder">
-            <p class="info">  <i class="fas fa-info-circle"> </i>You can either publish your website via FTP or GitHub Pages</p>
+            <p class="info">  <i class="fas fa-info-circle"> </i><span lang="en">You can either publish your website via FTP or GitHub Pages</span><span lang="de">Du kannst deine Seite entweder über FTP oder GitHub Pages veröffentlichen </span></p>
             <input type="radio" name="publish-platform" value="ftp" id="ftp" checked>
             <label class="tab-toggle" for="ftp">FTP</label>
             <input type="radio" name="publish-platform" value="github" id="github">
@@ -46,37 +46,121 @@
                 <input type="text" name="ftp-host" id="ftp-host">
               </div>
               <div class="wrap">
-                <label for="ftp-username">username </label>
+                <label for="ftp-username"> <span lang="en">Username </span><span lang="de">Benutzername </span></label>
                 <input type="text" name="ftp-username" id="ftp-username">
               </div>
               <div class="wrap">
-                <label for="ftp-password">password </label>
+                <label for="ftp-password"> <span lang="en">Password </span><span lang="de">Passwort </span></label>
                 <input type="password" name="ftp-password" id="ftp-password">
               </div>
               <div class="wrap">
-                <label for="ftp-port">port </label>
+                <label for="ftp-port">Port </label>
                 <input type="number" name="ftp-port" id="ftp-port">
               </div>
               <div class="wrap">
-                <label for="ftp-directory">directory </label>
+                <label for="ftp-directory"> <span lang="en">Directory </span><span lang="de">Ordner </span></label>
                 <input type="text" name="ftp-directory" id="ftp-directory">
               </div>
             </div>
             <div class="tab github">
               <div class="wrap">
-                <label for="github-username">Username</label>
+                <label for="github-username"><span lang="en">Username </span><span lang="de">Benutzername </span></label>
                 <input type="text" name="github-username" id="github-username">
               </div>
               <div class="wrap">
-                <label for="github-password">password</label>
+                <label for="github-password"><span lang="en">Password </span><span lang="de">Passwort </span></label>
                 <input type="password" name="github-password" id="github-password">
               </div>
               <div class="wrap">
-                <label for="github-project-url">Project URL </label>
+                <label for="github-project-url"> <span lang="en">Project URL</span><span lang="de">Projekt URL</span></label>
                 <input type="url" name="github-project-url" id="github-project-url">
               </div>
             </div>
-          </div><a class="btn create" href="dashboard.html">Create Site</a>
+          </div><a class="btn create" href="dashboard.html"> <span lang="en">Create Site</span><span lang="de">Seite erstellen</span></a>
+        </form>
+      </div>
+    </div>
+    <div class="popup sitesettings">
+      <h1> <span lang="en">Site Settings</span><span lang="de">Seiteneinstellungen</span></h1>
+      <div class="content">
+        <form>
+          <div class="wrap">
+            <label for="directory-path"> <span lang="en">Directory</span><span lang="de">Ordner</span></label>
+            <input type="text" name="directory-path" id="directory-path">
+          </div>
+          <div class="wrap">
+            <label for="project-name"><span lang="en">Project Name</span><span lang="de">Projektname</span></label>
+            <input type="text" name="project-name" id="project-name">
+          </div>
+          <div class="tabholder">
+            <input type="radio" name="publish-platform" value="ftp" id="ftp" checked>
+            <label class="tab-toggle" for="ftp">FTP</label>
+            <input type="radio" name="publish-platform" value="github" id="github">
+            <label class="tab-toggle" for="github">GitHub </label>
+            <div class="tab ftp">
+              <div class="wrap">
+                <label for="ftp-host">Host </label>
+                <input type="text" name="ftp-host" id="ftp-host">
+              </div>
+              <div class="wrap">
+                <label for="ftp-username"><span lang="en">Username </span><span lang="de">Benutzername </span></label>
+                <input type="text" name="ftp-username" id="ftp-username">
+              </div>
+              <div class="wrap">
+                <label for="ftp-password"><span lang="en">Password </span><span lang="de">Passwort </span></label>
+                <input type="password" name="ftp-password" id="ftp-password">
+              </div>
+              <div class="wrap">
+                <label for="ftp-port">Port </label>
+                <input type="number" name="ftp-port" id="ftp-port">
+              </div>
+              <div class="wrap">
+                <label for="ftp-directory"><span lang="en">Directory </span><span lang="de">Ordner </span></label>
+                <input type="text" name="ftp-directory" id="ftp-directory">
+              </div>
+            </div>
+            <div class="tab github">
+              <div class="wrap">
+                <label for="github-username"><span lang="en">Username </span><span lang="de">Benutzername </span></label>
+                <input type="text" name="github-username" id="github-username">
+              </div>
+              <div class="wrap">
+                <label for="github-password"><span lang="en">Password </span><span lang="de">Passwort </span></label>
+                <input type="password" name="github-password" id="github-password">
+              </div>
+              <div class="wrap">
+                <label for="github-project-url"><span lang="en">Project URL</span><span lang="de">Projekt URL</span></label>
+                <input type="url" name="github-project-url" id="github-project-url">
+              </div>
+            </div>
+          </div><a class="btn create" href="#">Einstellungen speichern</a>
+        </form>
+      </div>
+    </div>
+    <div class="popup appsettings">
+      <h1> <span lang="en">App Settings</span><span lang="de">App Einstellungen</span></h1>
+      <div class="content">
+        <form>
+          <div class="checkbox input">
+            <div class="label">Advanced View</div>
+            <p class="info">  <i class="fas fa-info-circle"> </i><span lang="en">Advanced View Enables the File Tree View and Code Editors. This View is only recommended to Users Familiar with Code. It is very easy to break things.</span><span lang="de">Advanced View schaltet Code Editoren und eine Tree-View frei. Sie ist nur den Benutzern empfohlen, die mit Code vertraut sind.</span></p>
+            <input type="checkbox" name="advancedview" id="advancedview">
+            <label for="advancedview"><span lang="en">enable Advanced View</span><span lang="de">Advanced View aktivieren</span></label>
+          </div>
+          <div class="radio input">
+            <div class="label"><span lang="en">Language</span><span lang="de">Sprache</span></div>
+            <input type="radio" name="lang" id="eng" value="en">
+            <label for="eng"><span lang="en">English (EN)</span><span lang="de">Englisch (EN)</span></label><br>
+            <input type="radio" name="lang" id="ger" value="de">
+            <label for="ger"><span lang="en">German (DE)</span><span lang="de">Deutsch (DE)</span></label>
+          </div>
+          <div class="radio input">
+            <div class="label">UI Skin</div>
+            <input type="radio" name="skin" id="light" value="main">
+            <label for="light"><span lang="en">Light</span><span lang="de">Hell</span></label><br>
+            <input type="radio" name="skin" id="dark" value="dark">
+            <label for="dark"><span lang="en">Dark</span><span lang="de">Dunkel</span></label>
+          </div><a class="btn saveappsettings" href="#"><span lang="en">Save Settings</span><span lang="de">Einstellungen speichern</span></a>
         </form>
       </div>
     </div>

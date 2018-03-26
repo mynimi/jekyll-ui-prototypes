@@ -60,6 +60,11 @@ $container-background-color: transparent;
 $container-max-width: 1200px; // use px here
 $container-width: 80%; // use % here
 
+$cards-per-row: 4;
+$card-breakpoint-1: 1110px;
+$card-breakpoint-2: 730px;
+$card-breakpoint-3: 600px;
+
 // Paddings
 //----------
 $header-padding: 5px 10px;
@@ -69,11 +74,12 @@ $header-padding: 5px 10px;
 $main-color: $black;
 $link-color: $accent;
 $link-hover-color: $accent-alt;
-$background-color: $white;
+$background-color: $lightgray;
 $header-background: $black;
 $header-color: $white;
 $header-link-color: rgba($white, .7);
 $header-link-hover: $white;
+$sidenav-background: $mediumgray;
 
 $dragdroparea-border: 2px dashed darken($white, 30%);
 
@@ -88,3 +94,8 @@ $popup-backdrop: rgba($black, .1);
 $input-label-color: $accent-alt;
 $input-border: 1px solid $accent-alt;
 $input-focus-color: $accent;
+
+$card-shadow: 0px 3px 6px 0px rgba(black, .1);
+$card-background: $white;
+
+$sidenav-width: 250px;

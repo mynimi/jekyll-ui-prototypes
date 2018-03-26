@@ -1,0 +1,60 @@
+.popup.sitesettings
+    h1 
+        span(lang="en") Site Settings
+        span(lang="de") Seiteneinstellungen
+    .content
+        form
+            .wrap
+                label(for="directory-path") 
+                    span(lang="en") Directory
+                    span(lang="de") Ordner
+                input(type="text" name="directory-path" id="directory-path")
+            .wrap
+                label(for="project-name")
+                    span(lang="en") Project Name
+                    span(lang="de") Projektname
+                input(type="text" name="project-name" id="project-name")
+            .tabholder
+                input(type="radio" name="publish-platform" value="ftp" id="ftp" checked) 
+                label.tab-toggle(for="ftp") FTP
+                input(type="radio" name="publish-platform" value="github" id="github")
+                label.tab-toggle(for="github") GitHub 
+                .tab.ftp
+                    .wrap
+                        label(for="ftp-host") Host 
+                        input(type="text" name="ftp-host" id="ftp-host")
+                    .wrap
+                        label(for="ftp-username")
+                            span(lang="en") Username 
+                            span(lang="de") Benutzername 
+                        input(type="text" name="ftp-username" id="ftp-username")
+                    .wrap
+                        label(for="ftp-password")
+                            span(lang="en") Password 
+                            span(lang="de") Passwort 
+                        input(type="password" name="ftp-password" id="ftp-password")
+                    .wrap
+                        label(for="ftp-port") Port 
+                        input(type="number" name="ftp-port" id="ftp-port")
+                    .wrap
+                        label(for="ftp-directory")
+                            span(lang="en") Directory 
+                            span(lang="de") Ordner 
+                        input(type="text" name="ftp-directory" id="ftp-directory")
+                .tab.github
+                    .wrap
+                        label(for="github-username")
+                            span(lang="en") Username 
+                            span(lang="de") Benutzername 
+                        input(type="text" name="github-username" id="github-username")
+                    .wrap
+                        label(for="github-password")
+                            span(lang="en") Password 
+                            span(lang="de") Passwort 
+                        input(type="password" name="github-password" id="github-password")
+                    .wrap
+                        label(for="github-project-url")
+                           span(lang="en") Project URL
+                           span(lang="de") Projekt URL
+                        input(type="url" name="github-project-url" id="github-project-url")
+            a.btn(href="#").create Einstellungen speichern
