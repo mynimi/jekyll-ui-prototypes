@@ -16,28 +16,12 @@
       <nav class="topnav"><a class="live" href="#"><span lang="en">Go to Website</span><span lang="de">Website öffnen</span></a><a class="site" href="#" data-togglepopup="sitesettings"> <span lang="en">Site Settings</span><span lang="de">Seiteneinstellungen</span></a><a class="app" href="#" data-togglepopup="appsettings"> <span lang="en">App Settings</span><span lang="de">App Einstellungen</span></a></nav>
     </header>
     <div class="container">
-      <div class="middle">
-        <h1><span lang="en">Posts</span><span lang="de">Beiträge</span></h1>
-        <div class="cardholder">
-          <div class="card">
-            <div class="card-content"><span>4&nbsp;<span lang="en">Posts</span><span lang="de">Beiträge</span></span>
-              <table>
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Tags</th>
-                    <th>Date</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody></tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
+      <form>
+        <div class="wrap">
+          <label for="edit-title"><span lang="en">Title </span><span lang="de">Titel</span></label>
+          <input type="text" name="edit-title" id="edit-title">
+        </div><a class="btn saveedit" href="posts.html"><span lang="en">Save Edit</span><span lang="de">Änderungen speichern</span></a>
+      </form>
     </div>
     <div class="sidenav">
       <nav><a href="dashboard.html">Dashboard</a><a href="posts.html"> <span lang="en">Posts</span><span lang="de">Beiträge</span></a><a href="pages.html"> <span lang="en">Pages</span><span lang="de">Seiten</span></a><a href="themeoptions.html"><span lang="en">Theme Options</span><span lang="de">Theme Optionen</span></a><a href="editconfig.html"><span lang="en">Configuration</span><span lang="de">Konfiguration</span></a><a href="sidebar.html">Sidebar</a><a href="navigation.html">Navigation</a></nav>

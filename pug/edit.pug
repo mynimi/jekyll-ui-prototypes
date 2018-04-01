@@ -1,0 +1,16 @@
+extends layout.pug
+
+block vars
+    - var page = { title: "Posts", subtitle: "Test", author: "author", description: "description", tags: ["tag1", "tag2", "tag3"] }
+    include includes/postlist.pug
+
+block content
+    form
+        .wrap
+            label(for="edit-title")
+                span(lang="en") Title 
+                span(lang="de") Titel
+            input(type="text" name="edit-title" id="edit-title")
+        a.btn(href="posts.html").saveedit
+            span(lang="en") Save Edit
+            span(lang="de") Änderungen speichern

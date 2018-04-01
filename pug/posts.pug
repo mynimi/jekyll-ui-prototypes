@@ -25,17 +25,10 @@ block content
                     table
                         thead
                             tr
+                                th ID
                                 th Title
                                 th Tags
                                 th Date
                                 th Status
-                                th Edit
+                                th Actions
                         tbody
-                            for post in postList
-                                tr
-                                    td=post.title
-                                    td=post.tags
-                                    td=post.date
-                                    td=post.status 
-                                    td
-                                        a(href="#") Edit
