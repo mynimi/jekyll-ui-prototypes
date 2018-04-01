@@ -1,13 +1,25 @@
 .cardholder{
     @include alwaysFull('.card', $cards-per-row, $card-breakpoint-1, $card-breakpoint-2, $card-breakpoint-3);
-    .card{
+}
+
+.card{
+    padding: 10px;
+    box-sizing: border-box;
+    .card-content{
+        box-shadow: $card-shadow;
+        background: $card-background;
         padding: 10px;
         box-sizing: border-box;
-        .card-content{
-            box-shadow: $card-shadow;
-            background: $card-background;
-            padding: 10px;
-            box-sizing: border-box;
-        }
+    }
+}
+
+.cards-alt{
+    @include flexbox(row, wrap, space-between, flex-start);
+
+    .main{
+        width: (100% / 3)*2;
+    }
+    .secondary{
+        width: (100% / 3);
     }
 }

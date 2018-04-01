@@ -61,4 +61,47 @@
             display: none;
         }
     }
+
+    #WYSIWYG{
+        &:checked{
+            +label{
+                background: $tab-area-active-bg;
+            }
+            ~ .tab.WYSIWYG{
+                display: block;
+            }
+        }
+        ~ .tab.markdown,
+        ~ .tab.HTML{
+            display: none;
+        }
+    }
+    #markdown{
+        &:checked{
+            +label{
+                background: $tab-area-active-bg;
+            }
+            ~ .tab.markdown{
+                display: block;
+            }
+        }
+        ~ .tab.WYSIWYG,
+        ~ .tab.HTML{
+            display: none;
+        }
+    }
+    #HTML{
+        &:checked{
+            +label{
+                background: $tab-area-active-bg;
+            }
+            ~ .tab.HTML{
+                display: block;
+            }
+        }
+        ~ .tab.WYSIWYG,
+        ~ .tab.markdown{
+            display: none;
+        }
+    }
 }

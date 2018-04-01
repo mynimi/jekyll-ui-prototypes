@@ -58,7 +58,7 @@ code, kbd, pre { font-family: 'Source Code Pro', 'Courier New', monospace; }
 
 p + p { margin-top: 5px; }
 
-.container { max-width: 1200px; width: 80%; background: transparent; display: block; position: relative; margin: 0px auto; padding: 30px 0; }
+.container { max-width: 1900px; width: 80%; background: transparent; display: block; position: relative; margin: 0px auto; padding: 30px 0; }
 
 .hidden { display: none; }
 
@@ -126,6 +126,24 @@ h1, h2 { width: 100%; }
 
 .tabholder #github ~ .tab.github { display: none; }
 
+.tabholder #WYSIWYG:checked + label { background: #F6F6F6; }
+
+.tabholder #WYSIWYG:checked ~ .tab.WYSIWYG { display: block; }
+
+.tabholder #WYSIWYG ~ .tab.markdown, .tabholder #WYSIWYG ~ .tab.HTML { display: none; }
+
+.tabholder #markdown:checked + label { background: #F6F6F6; }
+
+.tabholder #markdown:checked ~ .tab.markdown { display: block; }
+
+.tabholder #markdown ~ .tab.WYSIWYG, .tabholder #markdown ~ .tab.HTML { display: none; }
+
+.tabholder #HTML:checked + label { background: #F6F6F6; }
+
+.tabholder #HTML:checked ~ .tab.HTML { display: block; }
+
+.tabholder #HTML ~ .tab.WYSIWYG, .tabholder #HTML ~ .tab.markdown { display: none; }
+
 input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]) { width: 100%; }
 
 .wrap { position: relative; border: 1px solid #C5D5DB; margin: 15px 0; padding: 10px; -webkit-transition: .3s all ease; -o-transition: .3s all ease; transition: .3s all ease; }
@@ -134,11 +152,17 @@ input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type
 
 .wrap.focus label { color: #42ADDB !important; }
 
-.wrap input { background: transparent; font-size: 19px; padding: 0; border: 0; }
+.wrap input, .wrap textarea { background: transparent; font-size: 19px; padding: 0; border: 0; }
+
+.wrap textarea { width: 100%; height: 100%; }
 
 .wrap label { position: absolute; top: auto; left: 10px; -webkit-transition: .3s all ease; -o-transition: .3s all ease; transition: .3s all ease; color: #000; }
 
 .wrap label.up { background: #F6F6F6; font-size: .8em; top: 0; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); color: #C5D5DB; }
+
+.card .wrap label.up { background: #fff; }
+
+.tab .wrap label.up { background: #F6F6F6; }
 
 .label { color: #C5D5DB; font-size: .8em; }
 
@@ -154,9 +178,15 @@ input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type
 
 @media screen and (max-width: 600px) { .cardholder .card { -webkit-box-flex: 1; -ms-flex: 1 0 calc(100% / 1); flex: 1 0 calc(100% / 1); } }
 
-.cardholder .card { padding: 10px; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.card { padding: 10px; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-.cardholder .card .card-content { -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1); box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1); background: #fff; padding: 10px; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.card .card-content { -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1); box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1); background: #fff; padding: 10px; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.cards-alt { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
+
+.cards-alt .main { width: 66.66667%; }
+
+.cards-alt .secondary { width: 33.33333%; }
 
 .sidenav { width: 250px; background: #aaaaaa; color: black; position: fixed; top: 40px; left: 0; height: calc(100% - 40px); padding: 10px; -webkit-box-sizing: border-box; box-sizing: border-box; }
 

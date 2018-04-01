@@ -35,7 +35,7 @@ $(document).ready(function() {
                 post.status = this.status;
                 post.content = this.content;
                 posts["post"+post.id] = post;
-                items.push('<tr><td>'+this.id+'</td><td>'+this.title+'</td><td>'+this.tags+'</td><td>'+this.date+'</td><td>'+this.status+'</td><td><a class="editpost" href="edit.html" data-edit-post-id="'+this.id+'">Edit</a><a href="#">Delete</a><a href="#">Duplicate</a></td></tr>');
+                items.push('<tr><td>'+this.id+'</td><td>'+this.title+'</td><td>'+this.tags+'</td><td>'+this.date+'</td><td>'+this.status+'</td><td><a class="editpost btn" href="edit.html" data-edit-post-id="'+this.id+'">Edit</a><a class="deletepost btn" href="#" data-delete-post-id="'+this.id+'">Delete</a><a class="dubplicatepost btn" href="#" data-duplicate-post-id="'+this.id+'">Duplicate</a></td></tr>');
             });
 
             // console.log(posts);
@@ -51,7 +51,6 @@ $(document).ready(function() {
             $(this).each(function(){
                 // e.preventDefault();
                 var id = $(this).data('edit-post-id');
-                alert(id);
                 posts = JSON.parse(getCookie("posts"));
                 var p = posts["post"+id];
                 console.log(p.title);
@@ -129,22 +128,22 @@ $(document).ready(function() {
         $(this).remove();
     });
 
-    $('.wrap input').each(function() {
+    $('.wrap input, .wrap textarea').each(function() {
         var name = $(this).attr('name');
-        if ($(this).attr('placeholder') || $(this).val() || $(this).attr('type') == 'file') {
+        if ($(this).attr('placeholder') || $(this).val() || $(this).attr('type') == 'file' || $(this).attr('type') == 'date') {
             $('label[for="' + name + '"]').addClass('up');
         } else {
             $('label[for="' + name + '"]').removeClass('up');
         }
     });
-    $('.wrap input').focus(function() {
+    $('.wrap input, .wrap textarea').focus(function() {
         var name = $(this).attr('name');
         $('label[for="' + name + '"]').addClass('up');
         $(this).parent().addClass('focus');
     });
-    $('.wrap input').blur(function() {
+    $('.wrap input, .wrap textarea').blur(function() {
         var name = $(this).attr('name');
-        if ($(this).attr('placeholder') || $(this).val() || $(this).attr('type') == 'file') {
+        if ($(this).attr('placeholder') || $(this).val() || $(this).attr('type') == 'file' || $(this).attr('type') == 'date') {
             $('label[for="' + name + '"]').addClass('up');
         } else {
             $('label[for="' + name + '"]').removeClass('up');

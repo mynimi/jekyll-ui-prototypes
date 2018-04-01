@@ -58,7 +58,7 @@ code, kbd, pre { font-family: 'Source Code Pro', 'Courier New', monospace; }
 
 p + p { margin-top: 5px; }
 
-.container { max-width: 1200px; width: 80%; background: transparent; display: block; position: relative; margin: 0px auto; padding: 30px 0; }
+.container { max-width: 1900px; width: 80%; background: transparent; display: block; position: relative; margin: 0px auto; padding: 30px 0; }
 
 .hidden { display: none; }
 
@@ -126,6 +126,24 @@ h1, h2 { width: 100%; }
 
 .tabholder #github ~ .tab.github { display: none; }
 
+.tabholder #WYSIWYG:checked + label { background: #090909; }
+
+.tabholder #WYSIWYG:checked ~ .tab.WYSIWYG { display: block; }
+
+.tabholder #WYSIWYG ~ .tab.markdown, .tabholder #WYSIWYG ~ .tab.HTML { display: none; }
+
+.tabholder #markdown:checked + label { background: #090909; }
+
+.tabholder #markdown:checked ~ .tab.markdown { display: block; }
+
+.tabholder #markdown ~ .tab.WYSIWYG, .tabholder #markdown ~ .tab.HTML { display: none; }
+
+.tabholder #HTML:checked + label { background: #090909; }
+
+.tabholder #HTML:checked ~ .tab.HTML { display: block; }
+
+.tabholder #HTML ~ .tab.WYSIWYG, .tabholder #HTML ~ .tab.markdown { display: none; }
+
 input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]) { width: 100%; }
 
 .wrap { position: relative; border: 1px solid #3a2a24; margin: 15px 0; padding: 10px; -webkit-transition: .3s all ease; -o-transition: .3s all ease; transition: .3s all ease; }
@@ -134,11 +152,17 @@ input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type
 
 .wrap.focus label { color: #bd5224 !important; }
 
-.wrap input { background: transparent; font-size: 19px; padding: 0; border: 0; }
+.wrap input, .wrap textarea { background: transparent; font-size: 19px; padding: 0; border: 0; }
+
+.wrap textarea { width: 100%; height: 100%; }
 
 .wrap label { position: absolute; top: auto; left: 10px; -webkit-transition: .3s all ease; -o-transition: .3s all ease; transition: .3s all ease; color: white; }
 
 .wrap label.up { background: #090909; font-size: .8em; top: 0; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); color: #3a2a24; }
+
+.card .wrap label.up { background: black; }
+
+.tab .wrap label.up { background: #090909; }
 
 .label { color: #3a2a24; font-size: .8em; }
 
