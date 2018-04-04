@@ -92,6 +92,8 @@ h1, h2 { width: 100%; }
 
 .info .svg-inline--fa { margin-right: 5px; }
 
+.tag { background: #fff; color: black; padding: 2px 5px; margin: 5px; border-radius: 3px; }
+
 .popup-open { overflow: hidden; }
 
 .popup-open > section, .popup-open > div:not(.popup), .popup-open > header, .popup-open > footer { -webkit-filter: blur(5px); filter: blur(5px); }
@@ -182,7 +184,7 @@ input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type
 
 .card .card-content { -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1); box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1); background: #fff; padding: 10px; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-.cards-alt { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
+.cards-alt { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: stretch; -ms-flex-align: stretch; align-items: stretch; }
 
 .cards-alt .main { width: 66.66667%; }
 

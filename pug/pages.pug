@@ -13,14 +13,15 @@ block content
     //-     +post-card(post)
     .middle
         h1
-            span(lang="en") Posts
-            span(lang="de") Beiträge
-        a.btn(href="newpost.html")
-            span(lang="en") Create New Post
-            span(lang="de") Neuen Post erstellen
+            span(lang="en") Pages
+            span(lang="de") Seiten
         .cardholder
             .card
                 .card-content
+                    span=postList.length 
+                        | &nbsp;
+                        span(lang="en") Pages
+                        span(lang="de") Seiten
                     table
                         thead
                             tr

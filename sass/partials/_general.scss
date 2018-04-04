@@ -219,3 +219,11 @@ h1, h2{
         margin-right: 5px;
     }
 }
+
+.tag{
+    background: $card-background;
+    color: black-or-white($card-background);
+    padding: 2px 5px;
+    margin: 5px;
+    border-radius: 3px;
+}

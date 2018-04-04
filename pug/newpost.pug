@@ -6,8 +6,8 @@ block vars
 
 block content
     .middle
-        h1 
-            span(lang="en") Edit Post 
+        h1
+            span(lang="en") Edit Post
             span(lang="de") Post bearbeiten
     .cards-alt
         .main
@@ -15,85 +15,84 @@ block content
                 .card-content
                     form
                         .wrap
-                            label(for="edit-title")
-                                span(lang="en") Title 
+                            label(for="create-title")
+                                span(lang="en") Title
                                 span(lang="de") Titel
-                            input(type="text" name="edit-title" id="edit-title")
+                            input(type="text" name="create-title" id="create-title")
                         .tabholder
-                            input(type="radio" name="content-input-method" value="WYSIWYG" id="WYSIWYG") 
+                            input(type="radio" name="content-input-method" value="WYSIWYG" id="WYSIWYG")
                             label.tab-toggle(for="WYSIWYG") WYSIWYG
                             input(type="radio" name="content-input-method" value="markdown" id="markdown")
-                            label.tab-toggle(for="markdown") Markdown 
+                            label.tab-toggle(for="markdown") Markdown
                             input(type="radio" name="content-input-method" value="HTML" id="HTML" checked)
-                            label.tab-toggle(for="HTML") HTML 
+                            label.tab-toggle(for="HTML") HTML
                             .tab.WYSIWYG
                                 .wrap
-                                    label(for="edit-content-wysiwyg")
+                                    label(for="create-content-wysiwyg")
                                         span(lang="en") Content WYSIWYG
                                         span(lang="de") Inhalt
-                                    textarea(type="text" name="edit-content-wysiwyg" id="edit-content-wysiwyg")
+                                    textarea(type="text" name="create-content-wysiwyg" id="create-content-wysiwyg")
                             .tab.markdown
                                 .wrap
-                                    label(for="edit-content-markdown")
+                                    label(for="create-content-markdown")
                                         span(lang="en") Content Markdown
                                         span(lang="de") Inhalt
-                                    textarea(type="text" name="edit-content-markdown" id="edit-content-markdown")
+                                    textarea(type="text" name="create-content-markdown" id="create-content-markdown")
                             .tab.HTML
                                 .wrap
-                                    label(for="edit-content-html")
+                                    label(for="create-content-html")
                                         span(lang="en") Content HTML
                                         span(lang="de") Inhalt
-                                    textarea(type="text" name="edit-content-html" id="edit-content-html")
+                                    textarea(type="text" name="create-content-html" id="create-content-html")
         .secondary
             .card
                 .card-content
                     h2 Meta
                     .wrap
-                        label(for="edit-description")
-                            span(lang="en") Meta Description 
+                        label(for="create-description")
+                            span(lang="en") Meta Description
                             span(lang="de") Meta Beschreibung
-                        input(type="text" name="edit-description" id="edit-description")
+                        input(type="text" name="create-description" id="create-description")
                     .wrap
-                        label(for="edit-date").up
-                            span(lang="en") Date 
+                        label(for="create-date").up
+                            span(lang="en") Date
                             span(lang="de") Datum
-                        input(type="date" name="edit-date" id="edit-date")
+                        input(type="date" name="create-date" id="create-date")
                     div.radio.input
                         .label Layout
-                        input(type="radio" name="edit-layout" id="full" value="full")
+                        input(type="radio" name="create-layout" id="full" value="full")
                         label(for="full")
                             span(lang="en") No Sidebar
                             span(lang="de") Keine Sidebar
                         br
-                        input(type="radio" name="edit-layout" id="left" value="left")
+                        input(type="radio" name="create-layout" id="left" value="left")
                         label(for="left")
                             span(lang="en") Sidebar Left
                             span(lang="de") Sidebar Links
                         br
-                        input(type="radio" name="edit-layout" id="right" value="right")
+                        input(type="radio" name="create-layout" id="right" value="right")
                         label(for="right")
                             span(lang="en") Sidebar Right
                             span(lang="de") Sidebar Rechts
                     .wrap
-                        label(for="edit-featimg") Featured Image
+                        label(for="create-featimg") Featured Image
                         .feat-img(style="padding: 10px;")
-                        input(type="file" name="edit-featimg" id="edit-featimg")
+                        input(type="file" name="create-featimg" id="create-featimg")
                     .wrap
-                        label(for="edit-tags") Tags
-                        input(type="text" name="edit-tags" id="edit-tags")
+                        label(for="create-tags") Tags
+                        input(type="text" name="create-tags" id="create-tags")
             .card
                 .card-content
                     h2 Includes
     a.btn(href="posts.html").preview
         span(lang="en") Preview
         span(lang="de") Vorschau
-    a.btn(href="posts.html").publishedit
+    a.btn(href="posts.html").publishpost
         span(lang="en") Publish
         span(lang="de") Publizieren
-    a.btn(href="posts.html").savedraft
+    a.btn(href="posts.html").savepostdraft
         span(lang="en") Save Draft
         span(lang="de") Entwurf speichern
     a.btn(href="posts.html").cancel
         span(lang="en") Cancel
         span(lang="de") Abbrechen
-                

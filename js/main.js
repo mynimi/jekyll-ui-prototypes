@@ -17,11 +17,40 @@ $(document).ready(function() {
     var pathname = window.location.pathname; // Returns path only
 
     var posts = {};
+    var items = [];
 
-    if (~pathname.indexOf("posts")) {
+    if(getCookie("posts")){
+        console.log('Posts cookie exists');
+        var postList = JSON.parse(getCookie("posts"));
+
+        $.each(postList, function(){
+            var tags = "";
+            for (i = 0; i < this.tags.length; i++) {
+                tags += '<span class="tag">' + this.tags[i] + '</span>';
+            }
+            items.push('<tr><td>' + this.id + '</td><td>' + this.title + '</td><td>' + tags + '</td><td>' + this.date + '</td><td>' + this.status + '</td><td><a class="editpost btn" href="edit.html" data-edit-post-id="' + this.id + '">Edit</a><a class="deletepost btn" href="#" data-delete-post-id="' + this.id + '">Delete</a><a class="duplicatepost btn" href="#" data-duplicate-post-id="' + this.id + '">Duplicate</a></td></tr>');
+        });
+
+        var count = 0;
+        var i;
+
+        for (i in postList) {
+            if (postList.hasOwnProperty(i)) {
+                count++;
+            }
+        }
+
+        var listCount = Object.keys(postList).length;
+        console.log(listCount);
+
+        console.log(count);
+        // TODO: Remove from Array
+        // TODO: Add to Array of Object
+        // TODO: Get Length of Array of Objects
+
+    } else{
+        console.log('Posts Cookie doesnt exist');
         $.getJSON("js/posts.json", function(json) {
-            var items = [];
-            // console.log(json);
 
             $.each(json, function() {
                 var post = {};
@@ -34,39 +63,178 @@ $(document).ready(function() {
                 post.tags = this.tags;
                 post.status = this.status;
                 post.content = this.content;
-                posts["post"+post.id] = post;
-                items.push('<tr><td>'+this.id+'</td><td>'+this.title+'</td><td>'+this.tags+'</td><td>'+this.date+'</td><td>'+this.status+'</td><td><a class="editpost btn" href="edit.html" data-edit-post-id="'+this.id+'">Edit</a><a class="deletepost btn" href="#" data-delete-post-id="'+this.id+'">Delete</a><a class="dubplicatepost btn" href="#" data-duplicate-post-id="'+this.id+'">Duplicate</a></td></tr>');
+                posts["post" + post.id] = post;
+                var tags = "";
+                for (i = 0; i < this.tags.length; i++) {
+                    tags += '<span class="tag">' + this.tags[i] + '</span>';
+                }
+                items.push('<tr><td>' + this.id + '</td><td>' + this.title + '</td><td>' + tags + '</td><td>' + this.date + '</td><td>' + this.status + '</td><td><a class="editpost btn" href="edit.html" data-edit-post-id="' + this.id + '">Edit</a><a class="deletepost btn" href="#" data-delete-post-id="' + this.id + '">Delete</a><a class="duplicatepost btn" href="#" data-duplicate-post-id="' + this.id + '">Duplicate</a></td></tr>');
             });
 
-            // console.log(posts);
-            // console.log(JSON.stringify(posts));
-            $('tbody').append(items);
-            console.log(posts);
-            console.log(JSON.stringify(posts));
             setCookie("posts", JSON.stringify(posts), 1);
             posts = JSON.parse(getCookie("posts"));
         });
+    }
 
-        $('table').on('click', '.editpost', function(e){
-            $(this).each(function(){
-                // e.preventDefault();
+    if (~pathname.indexOf("posts")) {
+        $('tbody').append(items);
+
+        $('table').on('click', '.editpost', function(e) {
+            $(this).each(function() {
                 var id = $(this).data('edit-post-id');
                 posts = JSON.parse(getCookie("posts"));
-                var p = posts["post"+id];
-                console.log(p.title);
+                console.log(posts);
+                var p = posts["post" + id];
+                console.log(p.content);
                 setCookie("currentEdit", JSON.stringify(p), 1);
             });
         });
+        $('table').on('click', '.deletepost', function(e) {
+            posts = JSON.parse(getCookie("posts"));
+            var id = $(this).data('delete-post-id');
+            var p = posts["post" + id];
+            if (confirm('Are you sure your want to delete '+p.title+'?')) {
+                delete posts["post" + id];
+                setCookie("posts", JSON.stringify(posts), 1);
+                location.reload();
+            }
+        });
+        $('table').on('click', '.duplicatepost', function(e) {
+            posts = JSON.parse(getCookie("posts"));
+            var id = $(this).data('duplicate-post-id');
+            var p = posts["post" + id];
+            var postCount = Object.keys(posts).length;
 
+            posts["post"+(postCount+1)] = p;
+
+            posts["post"+(postCount+1)].id = postCount + 1;
+
+            console.log(posts);
+
+            setCookie("posts", JSON.stringify(posts), 1);
+            location.reload();
+        });
     }
 
     if (~pathname.indexOf("edit")) {
-        if(getCookie("currentEdit")){
-            $('.container').append(JSON.parse(getCookie("currentEdit")));
+        if (getCookie("currentEdit")) {
             var cp = JSON.parse(getCookie("currentEdit"));
             $('input[name="edit-title"]').val(cp.title);
+            $('textarea[name*="edit-content"]').val(cp.content);
+            $('input[name="edit-description"]').val(cp.description);
+            $('input[name="edit-date"]').val(cp.date);
+            $('input[name="edit-layout"][value="' + cp.layout + '"]').prop('checked', true);
+            $('.feat-img').append('<img src="img/' + cp.featuredImage + '">');
+            $('input[name="edit-tags"]').val(cp.tags);
         }
     }
+
+    if (~pathname.indexOf("new")) {
+        var date = new Date();
+        $('input[type="date"]').val(date.toISOString().split('T')[0]);
+    }
+
+    $('.publishedit').click(function(e) {
+        var ce = {};
+        var cp = JSON.parse(getCookie("currentEdit"));
+        ce.id = cp.id;
+        ce.title = $('input[name="edit-title"]').val();
+        ce.description = $('input[name="edit-description"]').val();
+        ce.date = $('input[name="edit-date"]').val();
+        ce.layout = $('input[name="edit-layout"]:checked').val();
+        if ($('input[name="edit-featimg"]').val()) {
+            console.log('Featured image changed');
+            ce.featuredImage = $('input[name="edit-featimg"]').val().split('\\').pop();
+        } else {
+            ce.featuredImage = cp.featuredImage;
+        }
+        ce.tags = $('input[name="edit-tags"]').val().split(',');
+        ce.status = 'published';
+        ce.content = $('textarea[name*="edit-content"]').val();
+        setCookie("currentEdit", JSON.stringify(ce), 1);
+        posts = JSON.parse(getCookie("posts"));
+        console.log(posts);
+        posts['post' + ce.id] = ce;
+        setCookie("posts", JSON.stringify(posts), 1);
+    });
+
+    $('.savedraft').click(function(e){
+        var ce = {};
+        var cp = JSON.parse(getCookie("currentEdit"));
+        ce.id = cp.id;
+        ce.title = $('input[name="edit-title"]').val();
+        ce.description = $('input[name="edit-description"]').val();
+        ce.date = $('input[name="edit-date"]').val();
+        ce.layout = $('input[name="edit-layout"]:checked').val();
+        if ($('input[name="edit-featimg"]').val()) {
+            console.log('Featured image changed');
+            ce.featuredImage = $('input[name="edit-featimg"]').val().split('\\').pop();
+        } else {
+            ce.featuredImage = cp.featuredImage;
+        }
+        ce.tags = $('input[name="edit-tags"]').val().split(',');
+        ce.status = 'draft';
+        ce.content = $('textarea[name*="edit-content"]').val();
+        setCookie("currentEdit", JSON.stringify(ce), 1);
+        posts = JSON.parse(getCookie("posts"));
+        console.log(posts);
+        posts['post' + ce.id] = ce;
+        setCookie("posts", JSON.stringify(posts), 1);
+    });
+
+    $('.publishpost').click(function(e) {
+        // e.preventDefault();
+
+        var np = {};
+        var posts = JSON.parse(getCookie("posts"));
+        var postCount = Object.keys(posts).length;
+
+        np.id = postCount + 1;
+
+        if($('input[name="create-title"]').val() && $('input[name="create-description"]').val() && $('input[name="create-date"]').val() && $('input[name="create-layout"]:checked').val() && $('input[name="create-featimg"]').val() && $('input[name="create-tags"]').val() && ( $('textarea[name="create-content-wysiwyg"]').val() || $('textarea[name="create-content-markdown"]').val() || $('textarea[name="create-content-html"]').val() ) ){
+            np.title = $('input[name="create-title"]').val();
+            np.description = $('input[name="create-description"]').val();
+            np.date = $('input[name="create-date"]').val();
+            np.layout = $('input[name="create-layout"]:checked').val();
+            np.featuredImage = $('input[name="create-featimg"]').val().split('\\').pop();
+            np.tags = $('input[name="create-tags"]').val().split(',');
+            np.status = 'published';
+            np.content = $('textarea[name*="create-content"]').val();
+            posts['post' + np.id] = np;
+            console.log(posts);
+            setCookie("posts", JSON.stringify(posts), 1);
+        } else {
+            alert('Fill Out All fields');
+        }
+
+    });
+
+    $('.savepostdraft').click(function(e) {
+        // e.preventDefault();
+
+        var np = {};
+        var posts = JSON.parse(getCookie("posts"));
+        var postCount = Object.keys(posts).length;
+
+        np.id = postCount + 1;
+
+        if($('input[name="create-title"]').val() && $('input[name="create-description"]').val() && $('input[name="create-date"]').val() && $('input[name="create-layout"]:checked').val() && $('input[name="create-featimg"]').val() && $('input[name="create-tags"]').val() && ( $('textarea[name="create-content-wysiwyg"]').val() || $('textarea[name="create-content-markdown"]').val() || $('textarea[name="create-content-html"]').val() ) ){
+            np.title = $('input[name="create-title"]').val();
+            np.description = $('input[name="create-description"]').val();
+            np.date = $('input[name="create-date"]').val();
+            np.layout = $('input[name="create-layout"]:checked').val();
+            np.featuredImage = $('input[name="create-featimg"]').val().split('\\').pop();
+            np.tags = $('input[name="create-tags"]').val().split(',');
+            np.status = 'draft';
+            np.content = $('textarea[name*="create-content"]').val();
+            posts['post' + np.id] = np;
+            console.log(posts);
+            setCookie("posts", JSON.stringify(posts), 1);
+        } else {
+            alert('Fill Out All fields');
+        }
+
+    });
 
     $('input[name="lang"][value="' + getCookie('language') + '"]').prop('checked', true);
 

@@ -1,0 +1,15 @@
+extends layout.pug
+
+block vars
+    - var page = { title: "Posts", subtitle: "Test", author: "author", description: "description", tags: ["tag1", "tag2", "tag3"] }
+    include includes/postlist.pug
+
+block content
+    .middle
+        h1
+            span(lang="en") Configuration
+            span(lang="de") Konfiguration
+        .cardholder
+            .card
+                .card-content
+                    span Bla

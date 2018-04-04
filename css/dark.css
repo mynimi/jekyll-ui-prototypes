@@ -92,6 +92,8 @@ h1, h2 { width: 100%; }
 
 .info .svg-inline--fa { margin-right: 5px; }
 
+.tag { background: black; color: white; padding: 2px 5px; margin: 5px; border-radius: 3px; }
+
 .popup-open { overflow: hidden; }
 
 .popup-open > section, .popup-open > div:not(.popup), .popup-open > header, .popup-open > footer { -webkit-filter: blur(5px); filter: blur(5px); }

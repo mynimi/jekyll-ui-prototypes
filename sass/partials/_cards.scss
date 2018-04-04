@@ -14,7 +14,7 @@
 }
 
 .cards-alt{
-    @include flexbox(row, wrap, space-between, flex-start);
+    @include flexbox(row, wrap, space-between, stretch);
 
     .main{
         width: (100% / 3)*2;
