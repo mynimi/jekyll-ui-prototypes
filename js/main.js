@@ -31,23 +31,6 @@ $(document).ready(function() {
             items.push('<tr><td>' + this.id + '</td><td>' + this.title + '</td><td>' + tags + '</td><td>' + this.date + '</td><td>' + this.status + '</td><td><a class="editpost btn" href="edit.html" data-edit-post-id="' + this.id + '">Edit</a><a class="deletepost btn" href="#" data-delete-post-id="' + this.id + '">Delete</a><a class="duplicatepost btn" href="#" data-duplicate-post-id="' + this.id + '">Duplicate</a></td></tr>');
         });
 
-        var count = 0;
-        var i;
-
-        for (i in postList) {
-            if (postList.hasOwnProperty(i)) {
-                count++;
-            }
-        }
-
-        var listCount = Object.keys(postList).length;
-        console.log(listCount);
-
-        console.log(count);
-        // TODO: Remove from Array
-        // TODO: Add to Array of Object
-        // TODO: Get Length of Array of Objects
-
     } else{
         console.log('Posts Cookie doesnt exist');
         $.getJSON("js/posts.json", function(json) {
@@ -76,7 +59,7 @@ $(document).ready(function() {
         });
     }
 
-    if (~pathname.indexOf("posts")) {
+    if (~pathname.indexOf("posts") || ~pathname.indexOf("pages")) {
         $('tbody').append(items);
 
         $('table').on('click', '.editpost', function(e) {
@@ -218,7 +201,7 @@ $(document).ready(function() {
 
         np.id = postCount + 1;
 
-        if($('input[name="create-title"]').val() && $('input[name="create-description"]').val() && $('input[name="create-date"]').val() && $('input[name="create-layout"]:checked').val() && $('input[name="create-featimg"]').val() && $('input[name="create-tags"]').val() && ( $('textarea[name="create-content-wysiwyg"]').val() || $('textarea[name="create-content-markdown"]').val() || $('textarea[name="create-content-html"]').val() ) ){
+        if($('input[name="create-title"]').val() && $('input[name="create-description"]').val() && $('input[name="create-date"]').val() && $('input[name="create-layout"]:checked').val() && $('input[name="create-featimg"]').val() && $('input[name="create-tags"]').val() && ( $('textarea[name="create-content-wysiwyg"]').val() || $('textarea[name="create-content-markdown"] ').val() || $('textarea[name="create-content-html"]').val() ) ){
             np.title = $('input[name="create-title"]').val();
             np.description = $('input[name="create-description"]').val();
             np.date = $('input[name="create-date"]').val();

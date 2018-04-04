@@ -12,4 +12,41 @@ block content
         .cardholder
             .card
                 .card-content
-                    span Bla
+                    h2
+                        span(lang="en") General
+                        span(lang="de") Allgemein
+                    form
+                        .wrap
+                            label(for="title")
+                                span(lang="en") Title
+                                span(lang="de") Titel
+                            input(type="text" name="title" id="title")
+                        .wrap
+                            label(for="url") URL
+                            input(type="url" value="" name="url" id="url")
+                        .wrap
+                            label(for="desc")
+                                span(lang="en") Description
+                                span(lang="de") Beschreibung
+                            input(type="text" value="" name="desc" id="desc")
+                        .wrap
+                            label(for="author")
+                                span(lang="en") Author
+                                span(lang="de") Autor
+                            input(type="text" value="" name="author" id="author")
+                    h2
+                        span(lang="en") Theme Variables
+                        span(lang="de") Theme Variablen
+                    form
+                        .wrap
+                            label(for="insta") Instagram
+                            input(type="text" placeholder="@username" name="insta" id="insta")
+                        .wrap
+                            label(for="twitter") Twitter
+                            input(type="text" placeholder="@username" name="twitter" id="twitter")
+                        .wrap
+                            label(for="fb") Facebook
+                            input(type="text" placeholder="@username" name="fb" id="fb")
+        a.btn(href="#")
+            span(lang="en") Save Changes
+            span(lang="de") Änderungen speichern

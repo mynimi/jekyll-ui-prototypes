@@ -5,23 +5,16 @@ block vars
     include includes/postlist.pug
 
 block content
-    //- mixin post-card(post)
-    //-     .card
-    //-         .card-content
-    //-             h2.movie-title= post.title
-    //- for post in postList
-    //-     +post-card(post)
     .middle
         h1
             span(lang="en") Pages
             span(lang="de") Seiten
+        a.btn(href="newpost.html")
+            span(lang="en") Create New Page
+            span(lang="de") Neue Seite erstellen
         .cardholder
             .card
                 .card-content
-                    span=postList.length 
-                        | &nbsp;
-                        span(lang="en") Pages
-                        span(lang="de") Seiten
                     table
                         thead
                             tr

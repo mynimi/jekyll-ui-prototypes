@@ -5,12 +5,6 @@ block vars
     include includes/postlist.pug
 
 block content
-    //- mixin post-card(post)
-    //-     .card
-    //-         .card-content
-    //-             h2.movie-title= post.title
-    //- for post in postList
-    //-     +post-card(post)
     .middle
         h1
             span(lang="en") Theme Options
@@ -18,4 +12,90 @@ block content
         .cardholder
             .card
                 .card-content
-                    span Bla
+                    h2
+                        span(lang="en") Dimensions
+                        span(lang="de") Dimensionen
+                    form
+                        .wrap
+                            label(for="root-font-size")
+                                span(lang="en") Root Font Size [in px]
+                                span(lang="de") Grundschriftgrösse [in px]
+                            input(type="number" value="16" name="root-font-size" id="root-font-size")
+                        .wrap
+                            label(for="main-container-width")
+                                span(lang="en") Main Container Width [in %]
+                                span(lang="de") Hauptcontainer Breite [in %]
+                            input(type="number" value="80" min="1" max="100" name="main-container-width" id="main-container-width")
+                        .wrap
+                            label(for="main-max-width")
+                                span(lang="en") Main Container Max Width [in px]
+                                span(lang="de") Maximalbreite Hauptcontainer [in px]
+                            input(type="number" value="900" name="main-max-width" id="main-max-width")
+                        .wrap
+                            label(for="gutter-width")
+                                span(lang="en") Gutter Width [in px]
+                                span(lang="de") Gutter [in px]
+                            input(type="number" value="20" name="gutter-width" id="gutter-width")
+            .card
+                .card-content
+                    h2
+                        span(lang="en") Colors
+                        span(lang="de") Farben
+                    form
+                        .wrap
+                            label(for="background-color")
+                                span(lang="en") Background Color
+                                span(lang="de") Hintergrundfarbe
+                            input(type="color" value="#f8f8f8" name="background-color" id="background-color")
+                        .wrap
+                            label(for="main-color")
+                                span(lang="en") Main Font Color
+                                span(lang="de") Schriftfarbe
+                            input(type="color" value="#3b3b3e" name="main-color" id="main-color")
+                        .wrap
+                            label(for="primary-color")
+                                span(lang="en") Primary Color
+                                span(lang="de") Primäre Farbe
+                            input(type="color" value="#bbd0e9" name="primary-color" id="primary-color")
+                        .wrap
+                            label(for="scnd-color")
+                                span(lang="en") Secondary Color
+                                span(lang="de") Sekundäre Farbe
+                            input(type="color" value="#333333" name="scnd-color" id="scnd-color")
+            .card
+                .card-content
+                    h2
+                        span(lang="en") Looks
+                        span(lang="de") Optik
+                    form
+                        .wrap
+                            label(for="logo") Logo
+                            input(type="file" name="logo" id="logo")
+                        .wrap
+                            label(for="favicon") Favicon
+                            input(type="file" name="favicon" id="favicon")
+                        .wrap
+                            label(for="header") Header
+                            input(type="file" name="header" id="header")
+                        div.radio.input
+                            .label Layout
+                            input(type="radio" name="main-layout" id="full" value="full" checked)
+                            label(for="full")
+                                span(lang="en") No Sidebar
+                                span(lang="de") Keine Sidebar
+                            br
+                            input(type="radio" name="main-layout" id="left" value="left")
+                            label(for="left")
+                                span(lang="en") Sidebar Left
+                                span(lang="de") Sidebar Links
+                            br
+                            input(type="radio" name="main-layout" id="right" value="right")
+                            label(for="right")
+                                span(lang="en") Sidebar Right
+                                span(lang="de") Sidebar Rechts
+        a.btn(href="#")
+            span(lang="en") Reset All
+            span(lang="de") Alle Zurücksetzen
+        a.btn(href="#")
+            span(lang="en") Save Changes
+            span(lang="de") Änderungen speichern

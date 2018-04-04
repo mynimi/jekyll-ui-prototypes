@@ -20,13 +20,84 @@
         <h1><span lang="en">Theme Options</span><span lang="de">Theme Optionen</span></h1>
         <div class="cardholder">
           <div class="card">
-            <div class="card-content"><span>Bla</span></div>
+            <div class="card-content">
+              <h2><span lang="en">Dimensions</span><span lang="de">Dimensionen</span></h2>
+              <form>
+                <div class="wrap">
+                  <label for="root-font-size"><span lang="en">Root Font Size [in px]</span><span lang="de">Grundschriftgrösse [in px]</span></label>
+                  <input type="number" value="16" name="root-font-size" id="root-font-size">
+                </div>
+                <div class="wrap">
+                  <label for="main-container-width"><span lang="en">Main Container Width [in %]</span><span lang="de">Hauptcontainer Breite [in %]</span></label>
+                  <input type="number" value="80" min="1" max="100" name="main-container-width" id="main-container-width">
+                </div>
+                <div class="wrap">
+                  <label for="main-max-width"><span lang="en">Main Container Max Width [in px]</span><span lang="de">Maximalbreite Hauptcontainer [in px]</span></label>
+                  <input type="number" value="900" name="main-max-width" id="main-max-width">
+                </div>
+                <div class="wrap">
+                  <label for="gutter-width"><span lang="en">Gutter Width [in px]</span><span lang="de">Gutter [in px]</span></label>
+                  <input type="number" value="20" name="gutter-width" id="gutter-width">
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
+          <div class="card">
+            <div class="card-content">
+              <h2><span lang="en">Colors</span><span lang="de">Farben</span></h2>
+              <form>
+                <div class="wrap">
+                  <label for="background-color"><span lang="en">Background Color</span><span lang="de">Hintergrundfarbe</span></label>
+                  <input type="color" value="#f8f8f8" name="background-color" id="background-color">
+                </div>
+                <div class="wrap">
+                  <label for="main-color"><span lang="en">Main Font Color</span><span lang="de">Schriftfarbe</span></label>
+                  <input type="color" value="#3b3b3e" name="main-color" id="main-color">
+                </div>
+                <div class="wrap">
+                  <label for="primary-color"><span lang="en">Primary Color</span><span lang="de">Primäre Farbe</span></label>
+                  <input type="color" value="#bbd0e9" name="primary-color" id="primary-color">
+                </div>
+                <div class="wrap">
+                  <label for="scnd-color"><span lang="en">Secondary Color</span><span lang="de">Sekundäre Farbe</span></label>
+                  <input type="color" value="#333333" name="scnd-color" id="scnd-color">
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h2><span lang="en">Looks</span><span lang="de">Optik</span></h2>
+              <form>
+                <div class="wrap">
+                  <label for="logo">Logo</label>
+                  <input type="file" name="logo" id="logo">
+                </div>
+                <div class="wrap">
+                  <label for="favicon">Favicon</label>
+                  <input type="file" name="favicon" id="favicon">
+                </div>
+                <div class="wrap">
+                  <label for="header">Header</label>
+                  <input type="file" name="header" id="header">
+                </div>
+                <div class="radio input">
+                  <div class="label">Layout</div>
+                  <input type="radio" name="main-layout" id="full" value="full" checked>
+                  <label for="full"><span lang="en">No Sidebar</span><span lang="de">Keine Sidebar</span></label><br>
+                  <input type="radio" name="main-layout" id="left" value="left">
+                  <label for="left"><span lang="en">Sidebar Left</span><span lang="de">Sidebar Links</span></label><br>
+                  <input type="radio" name="main-layout" id="right" value="right">
+                  <label for="right"><span lang="en">Sidebar Right</span><span lang="de">Sidebar Rechts</span></label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div><a class="btn" href="#"><span lang="en">Reset All</span><span lang="de">Alle Zurücksetzen</span></a><a class="btn" href="#"><span lang="en">Save Changes</span><span lang="de">Änderungen speichern</span></a>
       </div>
     </div>
     <div class="sidenav">
-      <nav><a href="dashboard.html">Dashboard</a><a href="posts.html"> <span lang="en">Posts</span><span lang="de">Beiträge</span></a><a href="pages.html"> <span lang="en">Pages</span><span lang="de">Seiten</span></a><a href="themeoptions.html"><span lang="en">Theme Options</span><span lang="de">Theme Optionen</span></a><a href="editconfig.html"><span lang="en">Configuration</span><span lang="de">Konfiguration</span></a><a href="sidebar.html">Sidebar</a><a href="navigation.html">Navigation</a></nav>
+      <nav><a href="dashboard.html">Dashboard</a><a href="posts.html"> <span lang="en">Posts</span><span lang="de">Beiträge</span></a><a href="pages.html"> <span lang="en">Pages</span><span lang="de">Seiten</span></a><a href="themeoptions.html"><span lang="en">Theme Options</span><span lang="de">Theme Optionen</span></a><a href="editconfig.html"><span lang="en">Configuration</span><span lang="de">Konfiguration</span></a></nav>
     </div>
     <div class="popup sitesettings">
       <h1> <span lang="en">Site Settings</span><span lang="de">Seiteneinstellungen</span></h1>

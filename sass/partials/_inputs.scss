@@ -29,6 +29,10 @@ input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type
         height: 100%;
     }
 
+    input[type="color"],
+    input[type="file"]{
+        margin: 5px 0;
+    }
     label{
         position: absolute;
         top: auto;
@@ -39,7 +43,8 @@ input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type
         &.up{
             background: $background-color;
 
-            .card &{
+            .card &,
+            .popup & {
                 background: $card-background;
             }
             .tab &{
@@ -50,6 +55,7 @@ input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type
             transform: translateY(-50%);
             color: $input-label-color;
         }
+
     }
 }
 
