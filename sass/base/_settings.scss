@@ -75,11 +75,11 @@ $main-color: $black;
 $link-color: $accent;
 $link-hover-color: $accent-alt;
 $background-color: $lightgray;
-$header-background: $black;
-$header-color: $white;
-$header-link-color: rgba($white, .7);
-$header-link-hover: $white;
-$sidenav-background: $mediumgray;
+$header-background: $mediumgray;
+$header-color: black-or-white($header-background);
+$header-link-color: rgba($header-color, .7);
+$header-link-hover: $header-color;
+$sidenav-background: $gray;
 $table-row-bg: darken($white, 5%);
 
 $dragdroparea-border: 2px dashed darken($white, 30%);
@@ -101,3 +101,35 @@ $table-shadow: 0px 2px 4px 0px rgba(black, .1);
 $card-background: $white;
 
 $sidenav-width: 250px;
+
+
+@if($palette == dark){
+    $main-color: $whiteish;
+    $link-color: $accent;
+    $link-hover-color: $accent-alt;
+    $background-color: $black;
+    $header-background: darken(#333, 15%);
+    $header-color: black-or-white($header-background);
+    $header-link-color: rgba($header-color, .7);
+    $header-link-hover: $header-color;
+    $sidenav-background: invert($gray);
+    $table-row-bg: invert(darken($white, 5%));
+
+    $dragdroparea-border: 2px dashed darken($white, 30%);
+
+    $info-blue: #3a6495;
+
+    $tab-area-active-bg: darken(#333, 10%);
+    $tab-inactive-bg: darken(#333, 15%);
+    $tab-hover-bg: invert($mediumgray);
+
+    $popup-backdrop: rgba($black, .1);
+
+    $input-label-color: invert($accent-alt);
+    $input-border: 1px solid invert($accent-alt);
+    $input-focus-color: invert($accent);
+
+    $card-shadow: 0px 3px 6px 0px rgba(black, .1);
+    $table-shadow: 0px 2px 4px 0px rgba(black, .1);
+    $card-background: darken(#333, 6%);
+}

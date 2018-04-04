@@ -22,6 +22,8 @@ input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type
         font-size: $root-font-size;
         padding: 0;
         border: 0;
+        color: $main-color;
+        font-family: $main-font;
     }
 
     textarea{

@@ -14,7 +14,7 @@
         display: block;
         padding: 5px;
         margin: 5px 0;
-        border-bottom: 1px solid black-or-white($sidenav-background);
+        border-bottom: 1px solid rgba(black-or-white($sidenav-background), .1);
 
         &:hover{
             opacity: .7;

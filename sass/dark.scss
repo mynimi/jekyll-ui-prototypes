@@ -1,18 +1,7 @@
+$palette: dark;
 @import "toolbox/all";
-
-$white: invert($white);
-$black: invert($black);
-$whiteish: invert($whiteish);
-$blackish: invert($blackish);
-$lightgray: invert($lightgray);
-$gray: invert($gray);
-$mediumgray: invert($mediumgray);
-$accent-alt: invert($accent-alt);
-$accent: invert($accent);
-
 @import "base/settings";
 @import "base/typography";
-
 
 @import "base/reset";
 
@@ -20,5 +9,8 @@ $accent: invert($accent);
 @import "partials/popup";
 @import "partials/tabs";
 @import "partials/inputs";
+@import "partials/cards";
+@import "partials/sidenav";
+@import "partials/table";
 
 @import "partials/tobetakencareof";

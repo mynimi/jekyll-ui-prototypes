@@ -7,7 +7,7 @@
 
 // set color based on lightness of the color given.
 @function black-or-white($c){
-    @if (lightness($c) > 50){
+    @if (lightness($c) > 56){
         @return black;
     }
     @else{
@@ -19,11 +19,11 @@
 @function sqrt($r) {
     $x0: 1;
     $x1: $x0;
- 
+
     @for $i from 1 through 10 {
         $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
         $x0: $x1;
     }
- 
+
     @return $x1;
 }

@@ -14,6 +14,11 @@ $(document).ready(function() {
         $('[lang="en"]').hide();
     }
 
+    if(getCookie('skin')){
+        var skin = getCookie('skin');
+        $('link[rel="stylesheet"]').attr('href', 'css/'+skin+'.css');
+    }
+
     var pathname = window.location.pathname; // Returns path only
 
     var posts = {};
@@ -220,10 +225,13 @@ $(document).ready(function() {
     });
 
     $('input[name="lang"][value="' + getCookie('language') + '"]').prop('checked', true);
+    $('input[name="skin"][value="' + getCookie('skin') + '"]').prop('checked', true);
 
     $('.saveappsettings').click(function() {
         var lang = $('input[name="lang"]:checked').val();
+        var skin = $('input[name="skin"]:checked').val();
         setCookie('language', lang, 1);
+        setCookie('skin', skin, 1);
         location.reload();
     });
 
@@ -265,6 +273,105 @@ $(document).ready(function() {
         setCookie('siteSettings', JSON.stringify(siteSettings), 1);
     });
 
+    if (~pathname.indexOf("themeoptions")) {
+        if(!getCookie('themeOptionsInitial')){
+            var toInitial = {};
+            toInitial.fontSize = $('input[name="root-font-size"]').val();
+            toInitial.containerWidth = $('input[name="main-container-width"]').val();
+            toInitial.maxWidth = $('input[name="main-max-width"]').val();
+            toInitial.gutter = $('input[name="gutter-width"]').val();
+            toInitial.bgColor = $('input[name="background-color"]').val();
+            toInitial.mainColor = $('input[name="main-color"]').val();
+            toInitial.primary = $('input[name="primary-color"]').val();
+            toInitial.secondary = $('input[name="scnd-color"]').val();
+            toInitial.logo = $('input[name="logo"]').val();
+            toInitial.favicon = $('input[name="favicon"]').val();
+            toInitial.header = $('input[name="header"]').val();
+            toInitial.layout = $('input[name="main-layout"]:checked').val();
+            setCookie('themeOptionsInitial', JSON.stringify(toInitial), 1);
+            if(!getCookie('themeOptions')){
+                setCookie('themeOptions', JSON.stringify(toInitial), 1);
+            }
+        }
+    }
+
+    if (getCookie('themeOptions')) {
+        var o = JSON.parse(getCookie("themeOptions"));
+        $('input[name="root-font-size"]').val(o.fontSize);
+        $('input[name="main-container-width"]').val(o.containerWidth);
+        $('input[name="main-max-width"]').val(o.maxWidth);
+        $('input[name="gutter-width"]').val(o.gutter);
+        $('input[name="background-color"]').val(o.bgColor);
+        $('input[name="main-color"]').val(o.mainColor);
+        $('input[name="primary-color"]').val(o.primary);
+        $('input[name="scnd-color"]').val(o.secondary);
+        $('input[name="logo"]').val(o.logo);
+        $('input[name="favicon"]').val(o.favicon);
+        $('input[name="header"]').val(o.header);
+        $('input[name="main-layout"][value="' + o.layout + '"]').prop('checked', true);
+    }
+    $('.saveoptions').click(function() {
+        var tO = {};
+        tO.fontSize = $('input[name="root-font-size"]').val();
+        tO.containerWidth = $('input[name="main-container-width"]').val();
+        tO.maxWidth = $('input[name="main-max-width"]').val();
+        tO.gutter = $('input[name="gutter-width"]').val();
+        tO.bgColor = $('input[name="background-color"]').val();
+        tO.mainColor = $('input[name="main-color"]').val();
+        tO.primary = $('input[name="primary-color"]').val();
+        tO.secondary = $('input[name="scnd-color"]').val();
+        tO.logo = $('input[name="logo"]').val();
+        tO.favicon = $('input[name="favicon"]').val();
+        tO.header = $('input[name="header"]').val();
+        tO.layout = $('input[name="main-layout"]:checked').val();
+        setCookie('themeOptions', JSON.stringify(tO), 1);
+        alert('Changes saved');
+    });
+
+    $('.resetoptions').click(function(){
+        var o = JSON.parse(getCookie("themeOptionsInitial"));
+        $('input[name="root-font-size"]').val(o.fontSize);
+        $('input[name="main-container-width"]').val(o.containerWidth);
+        $('input[name="main-max-width"]').val(o.maxWidth);
+        $('input[name="gutter-width"]').val(o.gutter);
+        $('input[name="background-color"]').val(o.bgColor);
+        $('input[name="main-color"]').val(o.mainColor);
+        $('input[name="primary-color"]').val(o.primary);
+        $('input[name="scnd-color"]').val(o.secondary);
+        $('input[name="logo"]').val(o.logo);
+        $('input[name="favicon"]').val(o.favicon);
+        $('input[name="header"]').val(o.header);
+        $('input[name="main-layout"][value="' + o.layout + '"]').prop('checked', true);
+    });
+
+
+    $('.saveconfig').click(function() {
+        var config = {};
+        config.title = $('input[name="title"]').val();
+        config.url = $('input[name="url"]').val();
+        config.desc = $('input[name="desc"]').val();
+        config.author = $('input[name="author"]').val();
+        config.insta = $('input[name="insta"]').val();
+        config.twitter = $('input[name="twitter"]').val();
+        config.fb = $('input[name="fb"]').val();
+        setCookie('siteConfig', JSON.stringify(config), 1);
+        alert('Changes saved');
+    });
+
+    if (~pathname.indexOf("editconfig")) {
+        if(getCookie('siteConfig')){
+            var config = JSON.parse(getCookie("siteConfig"));
+            $('input[name="title"]').val(config.title);
+            $('input[name="url"]').val(config.url);
+            $('input[name="desc"]').val(config.desc);
+            $('input[name="author"]').val(config.author);
+            $('input[name="insta"]').val(config.insta);
+            $('input[name="twitter"]').val(config.twitter);
+            $('input[name="fb"]').val(config.fb);
+        }
+    }
+
+
     $('[data-togglepopup]').each(function() {
         $(this).click(function() {
             var popupClass = $(this).data('togglepopup');
@@ -302,6 +409,9 @@ $(document).ready(function() {
         $(this).parent().removeClass('focus');
     });
 
+    $('.publishsite').click(function(){
+        alert('Page Published');
+    });
 });
 
 
