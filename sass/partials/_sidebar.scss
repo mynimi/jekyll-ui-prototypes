@@ -1,0 +1,59 @@
+.widget{
+    padding: 7px 10px;
+    margin: 3px;
+    box-sizing: border-box;
+    border: 1px solid $accent;
+    border-radius: 3px;
+    display: inline-block;
+    height: auto !important;
+    font-size: .8em;
+    cursor: move;
+    width: auto;
+
+    .widget-config{
+        width: 100%;
+        display: none;
+        cursor: auto;
+    }
+
+    .edit,
+    .delete{
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        display: inline-block;
+        background: $accent;
+        color: black-or-white($accent);
+        border-radius: 50%;
+        font-size: .65em;
+        display: none;
+        cursor: pointer;
+    }
+    .delete{
+        background: red;
+        color: white;
+    }
+
+}
+.sidebar-areas{
+    flex-wrap: wrap;
+    .area{
+        width: 100%;
+        margin: 10px 0;
+        
+        .widget{
+            width: 100%;
+            @include flexbox(row, wrap, space-between, center);
+
+            h3 {
+                min-width: calc(100% - 65px);
+            }
+
+            .delete,
+            .edit{
+                display: inline-block;
+            }
+        }
+    }
+}

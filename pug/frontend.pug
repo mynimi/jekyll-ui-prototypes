@@ -1,0 +1,20 @@
+block vars
+    - var page = { title: "Title", subtitle: "Subtitle", author: "author", description: "description", tags: ["tag1", "tag2", "tag3"] }
+
+doctype html
+html
+    include includes/head.pug
+
+    body(class=page.title).frontend
+        .header
+            .site-title
+        .navbar
+        .main-wrapper
+            .content
+                block content
+            .sidebar
+        block additional
+
+        include includes/footer.pug
+    // body end
+// html end

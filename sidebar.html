@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="#{page.author}">
     <meta name="keywords" content="#{page.tags}">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css" id="main-style">
     <link rel="stylesheet" href="node_modules/trumbowyg/dist/ui/trumbowyg.min.css">
   </head>
   <!-- head end-->
   <body class="Posts has-sidenav">
     <header><b>UnHack for Jekyll</b>
-      <nav class="topnav"><a class="live" href="#"><span lang="en">Go to Website</span><span lang="de">Website öffnen</span></a><a class="site" href="#" data-togglepopup="sitesettings"> <span lang="en">Site Settings</span><span lang="de">Seiteneinstellungen</span></a><a class="app" href="#" data-togglepopup="appsettings"> <span lang="en">App Settings</span><span lang="de">App Einstellungen</span></a></nav>
+      <nav class="topnav"></nav>
     </header>
     <div class="container">
       <div class="middle">
@@ -23,47 +23,46 @@
           <div class="card">
             <div class="card-content">
               <h2> <span lang="en">Available Widgets</span><span lang="de">Verfügbare Widgets</span></h2>
-              <div class="droparea widgetrest" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <div draggable="true" ondragstart="drag(event)" id="drag1">
-                  <h3>Text</h3>
-                  <div class="wrap">
-                    <label for="edit-content-html"><span lang="en">Content</span><span lang="de">Inhalt</span></label>
-                    <textarea type="text" name="edit-content-html" id="edit-content-html"></textarea>
-                  </div><span class="btn" name="add-custom-text"><span lang="en">Save</span><span lang="de">Speichern</span></span>
+              <div class="widgets">
+                <div class="widget html dragable"> 
+                  <h3>Text</h3><span class="edit"><i class="fas fa-edit"> </i></span><span class="delete"> <i class="fas fa-trash-alt"> </i></span>
+                  <div class="widget-config">
+                    <div class="wrap">
+                      <label for="edit-content-html-widget"><span lang="en">Content</span><span lang="de">Inhalt</span></label>
+                      <textarea type="text" name="edit-content-html-widget" id="edit-content-html-widget"></textarea>
+                    </div><span class="btn apply"><span lang="en">Apply</span><span lang="de">Speichern</span></span>
+                  </div>
                 </div>
-                <h3> <span lang="en">Facebook Page</span><span lang="de">Facebook Seite</span></h3>
-                <div class="wrap">
-                  <label for="fb-url">UdRL</label>
-                  <input type="url" name="fb-url" id="fb-url">
-                </div><span class="btn" name="add-custom-text"><span lang="en">Save</span><span lang="de">Speichern            </span></span>
+                <div class="widget fb dragable">
+                  <h3> <span lang="en">Facebook Page</span><span lang="de">Facebook Seite</span></h3><span class="edit"><i class="fas fa-edit"> </i></span><span class="delete"> <i class="fas fa-trash-alt"> </i></span>
+                  <div class="widget-config">
+                    <div class="wrap">
+                      <label for="fb-url">URL</label>
+                      <input type="url" name="fb-url" id="fb-url">
+                    </div><span class="btn apply"><span lang="en">Apply</span><span lang="de">Speichern            </span></span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div class="card">
             <div class="card-content">
               <h2>Sidebar</h2>
-              <p class="droparea sidebar-drop" ondrop="drop(event)" ondragover="allowDrop(event)"><span lang="en">Drag Widget into Area to Add</span><span lang="de">Ziehe Widgets in diesen Bereich um hinzuzufügen</span></p>
-            </div>
-          </div><span class="btn alertme">Alert Me</span>
-          <div class="card"> 
-            <div class="card-content">
-              <ul class="slides">
-                <li class="slide slide1">Slide 1</li>
-                <li class="slide slide2">Slide 2</li>
-                <li class="slide slide3">Slide 3</li>
-                <li class="slide slide4">Slide 4</li>
-                <li class="slide slide5">Slide 5</li>
-              </ul>
+              <div class="areas sidebar-areas">
+                <div class="area area1">
+                  <div class="placeholder"><span lang="en">Drag Widget into Area to Add to Sidebar 1</span><span lang="de">Ziehe Widgets in diesen Bereich um hinzuzufügen</span></div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="pastehere"></div>
+        </div><span class="btn savesidebar">Save</span>
       </div>
     </div>
     <div id="fb-root"></div>
     <script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
     <div class="sidenav">
       <nav><a href="dashboard.html">Dashboard</a><a href="posts.html"> <span lang="en">Posts</span><span lang="de">Beiträge</span></a><a href="pages.html"> <span lang="en">Pages</span><span lang="de">Seiten</span></a><a href="themeoptions.html"><span lang="en">Theme Options</span><span lang="de">Theme Optionen</span></a><a href="editconfig.html"><span lang="en">Configuration</span><span lang="de">Konfiguration</span></a><a href="sidebar.html">Sidebar</a><a href="navigation.html">Navigation</a></nav>
+      <nav style="margin-top: 20px; padding-top: 20px; border-top: 2px solid currentColor;"><a class="live" href="#"><span lang="en">Go to Website</span><span lang="de">Website öffnen</span></a><a class="site" href="#" data-togglepopup="sitesettings"> <span lang="en">Site Settings</span><span lang="de">Seiteneinstellungen</span></a><a class="app" href="#" data-togglepopup="appsettings"> <span lang="en">App Settings</span><span lang="de">App Einstellungen</span></a></nav>
     </div>
     <div class="popup sitesettings">
       <h1> <span lang="en">Site Settings</span><span lang="de">Seiteneinstellungen</span></h1>

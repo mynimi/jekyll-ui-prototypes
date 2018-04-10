@@ -168,7 +168,7 @@ $(document).ready(function() {
         var pageElems = [];
         $.each(pages, function(){
             var id = 'edit-title-'+this.title,
-                item  = '<div class="menu-element">';
+                item  = '<div class="menu-element dragable">';
                 item += '<span class="title">';
                 item += this.title;
                 item += '</span>';

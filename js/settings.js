@@ -23,7 +23,7 @@ $(document).ready(function(){
     //------
     if(getCookie('skin')){
         var skin = getCookie('skin');
-        $('link[rel="stylesheet"]').attr('href', 'css/'+skin+'.css');
+        $('#main-style').attr('href', 'css/'+skin+'.css');
     }
 
     $('input[name="skin"][value="' + getCookie('skin') + '"]').prop('checked', true);
@@ -74,5 +74,5 @@ $(document).ready(function(){
         $('input[name="github-password"]').val(s.gitHubPassword);
         $('input[name="github-project-url"]').val(s.gitHubProjectUrl);
     }
-    
+
 });

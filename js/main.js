@@ -5,7 +5,9 @@
 // @prepros-append edit_config.js
 // @prepros-append sidebar.js
 // @prepros-append menubuilder.js
+// @prepros-append frontend.js
 
 // @prepros-append popup.js
+// @prepros-append dragndrop.js
 // @prepros-append form.js
 // @prepros-append cookie.js

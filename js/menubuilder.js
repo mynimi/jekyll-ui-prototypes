@@ -8,7 +8,7 @@ $(document).ready(function() {
         $.each(nav, function(i){
             var counter = parseInt(i),
                 id = 'edit-title-'+this.title,
-                item  = '<div class="menu-element ui-draggable ui-draggable-handle ui-sortable-handle clone">';
+                item  = '<div class="menu-element dragable ui-draggable ui-draggable-handle ui-sortable-handle clone">';
                 item += '<span class="title">';
                 item += this.title;
                 item += '</span>';
@@ -22,7 +22,7 @@ $(document).ready(function() {
                 item += '<span class="btn apply">apply</span>';
                 item += '</div>';
                 item += '</div>';
-            $('.areas .area:nth-of-type('+counter+')').append(item);
+            $('.menu-areas .area:nth-of-type('+counter+')').append(item);
             if(this.parent){
                 console.log(this.title);
                 console.log(this.children);
@@ -30,7 +30,7 @@ $(document).ready(function() {
                 $.each(children, function(i){
                     console.log(this.title);
                     var id = 'edit-title-'+this.title,
-                        item  = '<div class="menu-element ui-draggable ui-draggable-handle ui-sortable-handle clone">';
+                        item  = '<div class="menu-element dragable ui-draggable ui-draggable-handle ui-sortable-handle clone">';
                         item += '<span class="title">';
                         item += this.title;
                         item += '</span>';
@@ -44,7 +44,7 @@ $(document).ready(function() {
                         item += '<span class="btn apply">apply</span>';
                         item += '</div>';
                         item += '</div>';
-                    $('.areas .area:nth-of-type('+counter+')').append(item);
+                    $('.menu-areas .area:nth-of-type('+counter+')').append(item);
                 });
             }
             console.log(counter);
@@ -56,7 +56,7 @@ $(document).ready(function() {
     $('.savenav').click(function(){
         var nav = {},
             i;
-        $('.areas .area').each(function(i){
+        $('.menu-areas .area').each(function(i){
             var item = {};
             if($(this).children('.menu-element').length){
                 var mE = $(this).children('.menu-element:nth-child(2)');
@@ -85,12 +85,6 @@ $(document).ready(function() {
         alert('saved');
     });
 
-    $(".menu-element").draggable({
-        revert: true,
-        helper: "clone",
-        cursor: "move",
-        revertDuration: 0
-    });
 
     $('.area').on('click', '.menu-element .delete', function(){
         if (confirm('delete item?')) {
@@ -107,28 +101,5 @@ $(document).ready(function() {
         $(this).parent().slideToggle();
     });
 
-    $('.areas .area').droppable({
-        accept: ".menu-element",
-        activeClass: "ui-state-highlight",
-        drop: function(event, ui) {
-            var $item = $(ui.draggable);
-            if (!$item.hasClass('clone')) {
-                $item = $item.clone().addClass('clone');
-                $item.draggable({
-                    revert: true,
-                    cursor: "move",
-                    revertDuration: 0
-                });
-            }
-            $(this).addClass('has-drop').append($item);
-        }
-    }).sortable({
-        items: ".menu-element",
-        sort: function() {
-            // gets added unintentionally by droppable interacting with sortable
-            // using connectWithSortable fixes this, but doesn't allow you to customize active/hoverClass options
-            $(this).removeClass("ui-state-default");
-        }
-    });
 
 });

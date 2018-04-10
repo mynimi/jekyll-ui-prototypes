@@ -1,0 +1,109 @@
+.frontend{
+    margin-top: 0;
+    div{
+        box-sizing: border-box;
+    }
+    .header{
+        border: 3px solid black;
+        width: 100%;
+        min-height: 80px;
+    }
+    .accent-color{
+        color: $accent;
+    }
+    .accent-bg{
+        color: black-or-white($accent);
+        background: $accent;
+    }
+    .main-wrapper{
+        @include flexbox(row, wrap, space-between, flex-start);
+        max-width: 90%;
+        margin: 80px auto;
+
+        > .content{
+            width: calc(100% - 320px);
+            border: 3px solid black;
+        }
+    }
+    .sidebar{
+        width: 300px;
+        border: 3px solid black;
+        &:before{
+            content: 'sidebar';
+        }
+    }
+    &.full{
+        .sidebar{
+            display: none;
+        }
+        .main-wrapper > .content{
+            width: 100%;
+        }
+    }
+    &.left{
+        .main-wrapper{
+            flex-direction: row-reverse !important;
+        }
+    }
+    &.right{
+        .main-wrapper{
+            flex-direction: row;
+        }
+    }
+
+    article{
+        @include flexbox(row, wrap, space-between, flex-start);
+        border: 2px solid black;
+        margin: 20px;
+        position: relative;
+        .date{
+            position: absolute;
+            bottom: 3px;
+            right: 3px;
+        }
+        img{
+            width: 30%;
+        }
+        .content{
+            width: 70%;
+
+        }
+        .post-title{
+            text-transform: uppercase;
+            border-bottom: 2px solid black;
+            padding: 10px;
+
+            h2{
+                font-size: 3.5em;
+            }
+        }
+        .post-tags{
+            padding: 10px;
+            font-size: .7em;
+        }
+        .content{
+            padding: 10px;
+        }
+    }
+}
+.navbar{
+    width: 100%;
+    border: 3px solid black;
+    @include flexbox(row, wrap, center, center);
+
+    .parent,
+    a{
+        display: block;
+        position: relative;
+        margin: 0 10px;
+        cursor: pointer;
+    }
+    .children{
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: auto;
+        border: 3px solid black;
+    }
+}

@@ -13,44 +13,47 @@ block content
                     h2 
                         span(lang="en") Available Widgets
                         span(lang="de") Verfügbare Widgets
-                    div.droparea.widgetrest(ondrop="drop(event)" ondragover="allowDrop(event)")
-                        div(draggable="true" ondragstart="drag(event)" id="drag1")
+                    .widgets
+                        .widget.html.dragable 
                             h3 Text
-                            .wrap
-                                label(for="edit-content-html")
-                                    span(lang="en") Content
-                                    span(lang="de") Inhalt
-                                textarea(type="text" name="edit-content-html" id="edit-content-html")
-                            span.btn(name="add-custom-text")
-                                span(lang="en") Save
-                                span(lang="de") Speichern
-                        h3 
-                            span(lang="en") Facebook Page
-                            span(lang="de") Facebook Seite
-                        .wrap
-                            label(for="fb-url") UdRL
-                            input(type="url" name="fb-url" id="fb-url")
-                        //- | <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
-                        span.btn(name="add-custom-text")
-                            span(lang="en") Save
-                            span(lang="de") Speichern            
+                            span.edit
+                                i.fas.fa-edit 
+                            span.delete 
+                                i.fas.fa-trash-alt 
+                            .widget-config
+                                .wrap
+                                    label(for="edit-content-html-widget")
+                                        span(lang="en") Content
+                                        span(lang="de") Inhalt
+                                    textarea(type="text" name="edit-content-html-widget" id="edit-content-html-widget")
+                                span.btn.apply
+                                    span(lang="en") Apply
+                                    span(lang="de") Speichern
+                        .widget.fb.dragable
+                            h3 
+                                span(lang="en") Facebook Page
+                                span(lang="de") Facebook Seite
+                            span.edit
+                                i.fas.fa-edit 
+                            span.delete 
+                                i.fas.fa-trash-alt 
+                            .widget-config
+                                .wrap
+                                    label(for="fb-url") URL
+                                    input(type="url" name="fb-url" id="fb-url")
+                                        //- | <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
+                                span.btn.apply
+                                    span(lang="en") Apply
+                                    span(lang="de") Speichern            
             .card
                 .card-content
                     h2 Sidebar
-                    p.droparea.sidebar-drop(ondrop="drop(event)" ondragover="allowDrop(event)")
-                        span(lang="en") Drag Widget into Area to Add
-                        span(lang="de") Ziehe Widgets in diesen Bereich um hinzuzufügen
-            span.btn.alertme Alert Me
-                
-            .card 
-                .card-content
-                    ul.slides
-                        li.slide.slide1 Slide 1
-                        li.slide.slide2 Slide 2
-                        li.slide.slide3 Slide 3
-                        li.slide.slide4 Slide 4
-                        li.slide.slide5 Slide 5
-        .pastehere
+                    .areas.sidebar-areas
+                        .area.area1
+                            .placeholder
+                                span(lang="en") Drag Widget into Area to Add to Sidebar 1
+                                span(lang="de") Ziehe Widgets in diesen Bereich um hinzuzufügen
+        span.btn.savesidebar Save
 
 block additional
     #fb-root

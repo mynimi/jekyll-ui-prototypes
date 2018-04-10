@@ -1,7 +1,7 @@
 extends layout.pug
 
 block vars
-    - var page = { title: "Posts", subtitle: "Test", author: "author", description: "description", tags: ["tag1", "tag2", "tag3"] }
+    - var page = { title: "Them Options", bodyclass: "preview-open", subtitle: "Test", author: "author", description: "description", tags: ["tag1", "tag2", "tag3"] }
     include includes/postlist.pug
 
 block content
@@ -99,3 +99,6 @@ block content
         a.btn(href="#").saveoptions
             span(lang="en") Save Changes
             span(lang="de") Änderungen speichern
+block additional
+    .preview-frame
+        iframe(src="prev-index.html")

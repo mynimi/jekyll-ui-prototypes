@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="expires" content="43200">
+    <title>Posts - Test</title>
+    <meta name="description" content="#{page.description}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="#{page.author}">
+    <meta name="keywords" content="#{page.tags}">
+    <link rel="stylesheet" href="css/main.css" id="main-style">
+    <link rel="stylesheet" href="node_modules/trumbowyg/dist/ui/trumbowyg.min.css">
+  </head>
+  <!-- head end-->
+  <body class="Posts frontend">
+    <div class="header">
+      <div class="site-title"></div>
+    </div>
+    <div class="navbar"></div>
+    <div class="main-wrapper">
+      <div class="content">
+        <div class="frontend-post"></div>
+      </div>
+      <div class="sidebar"></div>
+    </div>
+    <!-- development (do not ship this)-->
+    <script src="js/fontawesome-all.js"></script>
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="node_modules/trumbowyg/dist/trumbowyg.min.js"></script>
+    <script src="js/main.min.js"></script>
+    <!-- production (compile scripts.min.js before shipping)-->
+    <!-- script(src="/js/scripts.min.js")-->
+  </body>
+  <!-- body end-->
+</html>
+<!-- html end-->

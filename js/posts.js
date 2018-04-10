@@ -6,9 +6,9 @@ $(document).ready(function() {
 
     if(getCookie("posts")){
         // console.log('Posts cookie exists');
-        var postList = JSON.parse(getCookie("posts"));
+        var posts = JSON.parse(getCookie("posts"));
 
-        $.each(postList, function(){
+        $.each(posts, function(){
             var tags = "";
             for (i = 0; i < this.tags.length; i++) {
                 tags += '<span class="tag">' + this.tags[i] + '</span>';

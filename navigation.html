@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="#{page.author}">
     <meta name="keywords" content="#{page.tags}">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css" id="main-style">
     <link rel="stylesheet" href="node_modules/trumbowyg/dist/ui/trumbowyg.min.css">
   </head>
   <!-- head end-->
   <body class="navigation has-sidenav">
     <header><b>UnHack for Jekyll</b>
-      <nav class="topnav"><a class="live" href="#"><span lang="en">Go to Website</span><span lang="de">Website öffnen</span></a><a class="site" href="#" data-togglepopup="sitesettings"> <span lang="en">Site Settings</span><span lang="de">Seiteneinstellungen</span></a><a class="app" href="#" data-togglepopup="appsettings"> <span lang="en">App Settings</span><span lang="de">App Einstellungen</span></a></nav>
+      <nav class="topnav"></nav>
     </header>
     <div class="container">
       <div class="middle">
@@ -24,7 +24,7 @@
             <div class="card-content">
               <h2>Available Elements</h2>
               <div class="pages">
-                <div class="menu-element"><span class="title">Add Custom Link</span><span class="edit"><i class="fas fa-edit"> </i></span><span class="delete"> <i class="fas fa-trash-alt"> </i></span>
+                <div class="menu-element dragable"><span class="title">Add Custom Link</span><span class="edit"><i class="fas fa-edit"> </i></span><span class="delete"> <i class="fas fa-trash-alt"> </i></span>
                   <div class="edit-name">
                     <div class="wrap">
                       <label for="edit-title-custom">display as</label>
@@ -44,7 +44,7 @@
               <h2>Build Your Menu</h2>
               <p>Drag your Links into the slot. To create Dropdowns, Stack them.</p>
               <p>Note, that TopLevel Links of Dropdowns, are not funtioning links, they are just toggles.</p>
-              <div class="areas">
+              <div class="areas menu-areas">
                 <div class="area area1">
                   <div class="placeholder">Drag Element inside</div>
                 </div>
@@ -74,6 +74,7 @@
     </div>
     <div class="sidenav">
       <nav><a href="dashboard.html">Dashboard</a><a href="posts.html"> <span lang="en">Posts</span><span lang="de">Beiträge</span></a><a href="pages.html"> <span lang="en">Pages</span><span lang="de">Seiten</span></a><a href="themeoptions.html"><span lang="en">Theme Options</span><span lang="de">Theme Optionen</span></a><a href="editconfig.html"><span lang="en">Configuration</span><span lang="de">Konfiguration</span></a><a href="sidebar.html">Sidebar</a><a href="navigation.html">Navigation</a></nav>
+      <nav style="margin-top: 20px; padding-top: 20px; border-top: 2px solid currentColor;"><a class="live" href="#"><span lang="en">Go to Website</span><span lang="de">Website öffnen</span></a><a class="site" href="#" data-togglepopup="sitesettings"> <span lang="en">Site Settings</span><span lang="de">Seiteneinstellungen</span></a><a class="app" href="#" data-togglepopup="appsettings"> <span lang="en">App Settings</span><span lang="de">App Einstellungen</span></a></nav>
     </div>
     <div class="popup sitesettings">
       <h1> <span lang="en">Site Settings</span><span lang="de">Seiteneinstellungen</span></h1>
