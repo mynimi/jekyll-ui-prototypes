@@ -415,6 +415,14 @@ $(document).ready(function() {
 });
 
 
+$(document).keyup(function(e) {
+    if (e.keyCode === 27){
+        $('body').removeClass('popup-open');
+        $('.popup').fadeOut();
+        $('.behind-popup').remove();
+    }
+});
+
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
