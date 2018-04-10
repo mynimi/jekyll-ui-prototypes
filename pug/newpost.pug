@@ -2,13 +2,12 @@ extends layout.pug
 
 block vars
     - var page = { title: "Posts", subtitle: "Test", author: "author", description: "description", tags: ["tag1", "tag2", "tag3"] }
-    include includes/postlist.pug
 
 block content
     .middle
         h1
-            span(lang="en") New
-            span(lang="de") Neu
+            span(lang="en") New Post
+            span(lang="de") Neuer Beitrag
     .cards-alt
         .main
             .card
@@ -19,31 +18,11 @@ block content
                                 span(lang="en") Title
                                 span(lang="de") Titel
                             input(type="text" name="create-title" id="create-title")
-                        .tabholder
-                            input(type="radio" name="content-input-method" value="WYSIWYG" id="WYSIWYG")
-                            label.tab-toggle(for="WYSIWYG") WYSIWYG
-                            input(type="radio" name="content-input-method" value="markdown" id="markdown")
-                            label.tab-toggle(for="markdown") Markdown
-                            input(type="radio" name="content-input-method" value="HTML" id="HTML" checked)
-                            label.tab-toggle(for="HTML") HTML
-                            .tab.WYSIWYG
-                                .wrap
-                                    label(for="create-content-wysiwyg")
-                                        span(lang="en") Content WYSIWYG
-                                        span(lang="de") Inhalt
-                                    textarea(type="text" name="create-content-wysiwyg" id="create-content-wysiwyg")
-                            .tab.markdown
-                                .wrap
-                                    label(for="create-content-markdown")
-                                        span(lang="en") Content Markdown
-                                        span(lang="de") Inhalt
-                                    textarea(type="text" name="create-content-markdown" id="create-content-markdown")
-                            .tab.HTML
-                                .wrap
-                                    label(for="create-content-html")
-                                        span(lang="en") Content HTML
-                                        span(lang="de") Inhalt
-                                    textarea(type="text" name="create-content-html" id="create-content-html")
+                        .wrap
+                            label(for="create-content-html")
+                                span(lang="en") Content
+                                span(lang="de") Inhalt
+                            textarea(type="text" name="create-content-html" id="create-content-html")
         .secondary
             .card
                 .card-content

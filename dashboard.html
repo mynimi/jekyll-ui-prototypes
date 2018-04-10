@@ -9,6 +9,7 @@
     <meta name="author" content="#{page.author}">
     <meta name="keywords" content="#{page.tags}">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="node_modules/trumbowyg/dist/ui/trumbowyg.min.css">
   </head>
   <!-- head end-->
   <body class="Dashboard has-sidenav">
@@ -38,7 +39,7 @@
       </div>
     </div>
     <div class="sidenav">
-      <nav><a href="dashboard.html">Dashboard</a><a href="posts.html"> <span lang="en">Posts</span><span lang="de">Beiträge</span></a><a href="pages.html"> <span lang="en">Pages</span><span lang="de">Seiten</span></a><a href="themeoptions.html"><span lang="en">Theme Options</span><span lang="de">Theme Optionen</span></a><a href="editconfig.html"><span lang="en">Configuration</span><span lang="de">Konfiguration</span></a></nav>
+      <nav><a href="dashboard.html">Dashboard</a><a href="posts.html"> <span lang="en">Posts</span><span lang="de">Beiträge</span></a><a href="pages.html"> <span lang="en">Pages</span><span lang="de">Seiten</span></a><a href="themeoptions.html"><span lang="en">Theme Options</span><span lang="de">Theme Optionen</span></a><a href="editconfig.html"><span lang="en">Configuration</span><span lang="de">Konfiguration</span></a><a href="sidebar.html">Sidebar</a><a href="navigation.html">Navigation</a></nav>
     </div>
     <div class="popup sitesettings">
       <h1> <span lang="en">Site Settings</span><span lang="de">Seiteneinstellungen</span></h1>
@@ -125,9 +126,11 @@
       </div>
     </div>
     <!-- development (do not ship this)-->
-    <script src="/js/fontawesome-all.js"></script>
-    <script src="/js/jquery-3.1.1.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="js/fontawesome-all.js"></script>
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="node_modules/trumbowyg/dist/trumbowyg.min.js"></script>
+    <script src="js/main.min.js"></script>
     <!-- production (compile scripts.min.js before shipping)-->
     <!-- script(src="/js/scripts.min.js")-->
   </body>

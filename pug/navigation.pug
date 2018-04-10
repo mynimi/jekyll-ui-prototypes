@@ -1,13 +1,49 @@
 extends layout.pug
 
 block vars
-    - var page = { title: "Posts", subtitle: "Test", author: "author", description: "description", tags: ["tag1", "tag2", "tag3"] }
+    - var page = { title: "navigation", subtitle: "Test", author: "author", description: "description", tags: ["tag1", "tag2", "tag3"] }
     include includes/postlist.pug
 
 block content
     .middle
-        h1 Navigation
-        .cardholder
+        h1 Build your Menu
+        .cards
             .card
                 .card-content
-                    span Bla
+                    h2 Available Elements
+                    .pages
+                        .menu-element
+                            span.title Add Custom Link
+                            span.edit
+                                i.fas.fa-edit 
+                            span.delete 
+                                i.fas.fa-trash-alt 
+                            .edit-name
+                                .wrap
+                                    label(for="edit-title-custom") display as
+                                    input(type="text" name="edit-title-custom" id="edit-title-custom" value="Custom")
+                                .wrap
+                                    label(for="edit-url-custom") URL
+                                    input(type="text" name="edit-url-custom" id="edit-url-custom" value="#")
+                                span.btn.apply apply
+            .card 
+                .card-content
+                    h2 Build Your Menu
+                    p Drag your Links into the slot. To create Dropdowns, Stack them.
+                    p Note, that TopLevel Links of Dropdowns, are not funtioning links, they are just toggles.
+                    .areas
+                        .area.area1
+                            .placeholder Drag Element inside
+                        .area.area2
+                            .placeholder Drag Element inside
+                        .area.area3
+                            .placeholder Drag Element inside
+                        .area.area4
+                            .placeholder Drag Element inside
+                        .area.area5
+                            .placeholder Drag Element inside
+                        .area.area6
+                            .placeholder Drag Element inside
+                        .area.area7
+                            .placeholder Drag Element inside
+        span.btn.savenav Save Menu

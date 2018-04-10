@@ -1,0 +1,65 @@
+extends layout.pug
+
+block vars
+    - var page = { title: "pages", subtitle: "Test", author: "author", description: "description", tags: ["tag1", "tag2", "tag3"] }
+
+block content
+    .middle
+        h1
+            span(lang="en") New Page
+            span(lang="de") Neue Seite
+    .cards-alt
+        .main
+            .card
+                .card-content
+                    form
+                        .wrap
+                            label(for="create-title")
+                                span(lang="en") Title
+                                span(lang="de") Titel
+                            input(type="text" name="create-title" id="create-title")
+                        .wrap
+                            label(for="create-content-html")
+                                span(lang="en") Content
+                                span(lang="de") Inhalt
+                            textarea(type="text" name="create-content-html" id="create-content-html")
+        .secondary
+            .card
+                .card-content
+                    h2 Meta
+                    .wrap
+                        label(for="create-description")
+                            span(lang="en") Meta Description
+                            span(lang="de") Meta Beschreibung
+                        input(type="text" name="create-description" id="create-description")
+                    div.radio.input
+                        .label Layout
+                        input(type="radio" name="create-layout" id="full" value="full")
+                        label(for="full")
+                            span(lang="en") No Sidebar
+                            span(lang="de") Keine Sidebar
+                        br
+                        input(type="radio" name="create-layout" id="left" value="left")
+                        label(for="left")
+                            span(lang="en") Sidebar Left
+                            span(lang="de") Sidebar Links
+                        br
+                        input(type="radio" name="create-layout" id="right" value="right")
+                        label(for="right")
+                            span(lang="en") Sidebar Right
+                            span(lang="de") Sidebar Rechts
+            .card
+                .card-content
+                    h2 Includes
+    a.btn(href="pages.html").preview
+        span(lang="en") Preview
+        span(lang="de") Vorschau
+    a.btn(href="pages.html").publishpage
+        span(lang="en") Publish
+        span(lang="de") Publizieren
+    a.btn(href="pages.html").savepagedraft
+        span(lang="en") Save Draft
+        span(lang="de") Entwurf speichern
+    a.btn(href="pages.html").cancel
+        span(lang="en") Cancel
+        span(lang="de") Abbrechen

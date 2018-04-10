@@ -3,30 +3,77 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="expires" content="43200">
-    <title>Posts - Test</title>
+    <title>navigation - Test</title>
     <meta name="description" content="#{page.description}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="#{page.author}">
     <meta name="keywords" content="#{page.tags}">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="node_modules/trumbowyg/dist/ui/trumbowyg.min.css">
   </head>
   <!-- head end-->
-  <body class="Posts has-sidenav">
+  <body class="navigation has-sidenav">
     <header><b>UnHack for Jekyll</b>
       <nav class="topnav"><a class="live" href="#"><span lang="en">Go to Website</span><span lang="de">Website öffnen</span></a><a class="site" href="#" data-togglepopup="sitesettings"> <span lang="en">Site Settings</span><span lang="de">Seiteneinstellungen</span></a><a class="app" href="#" data-togglepopup="appsettings"> <span lang="en">App Settings</span><span lang="de">App Einstellungen</span></a></nav>
     </header>
     <div class="container">
       <div class="middle">
-        <h1>Navigation</h1>
-        <div class="cardholder">
+        <h1>Build your Menu</h1>
+        <div class="cards">
           <div class="card">
-            <div class="card-content"><span>Bla</span></div>
+            <div class="card-content">
+              <h2>Available Elements</h2>
+              <div class="pages">
+                <div class="menu-element"><span class="title">Add Custom Link</span><span class="edit"><i class="fas fa-edit"> </i></span><span class="delete"> <i class="fas fa-trash-alt"> </i></span>
+                  <div class="edit-name">
+                    <div class="wrap">
+                      <label for="edit-title-custom">display as</label>
+                      <input type="text" name="edit-title-custom" id="edit-title-custom" value="Custom">
+                    </div>
+                    <div class="wrap">
+                      <label for="edit-url-custom">URL</label>
+                      <input type="text" name="edit-url-custom" id="edit-url-custom" value="#">
+                    </div><span class="btn apply">apply</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+          <div class="card"> 
+            <div class="card-content">
+              <h2>Build Your Menu</h2>
+              <p>Drag your Links into the slot. To create Dropdowns, Stack them.</p>
+              <p>Note, that TopLevel Links of Dropdowns, are not funtioning links, they are just toggles.</p>
+              <div class="areas">
+                <div class="area area1">
+                  <div class="placeholder">Drag Element inside</div>
+                </div>
+                <div class="area area2">
+                  <div class="placeholder">Drag Element inside</div>
+                </div>
+                <div class="area area3">
+                  <div class="placeholder">Drag Element inside</div>
+                </div>
+                <div class="area area4">
+                  <div class="placeholder">Drag Element inside</div>
+                </div>
+                <div class="area area5">
+                  <div class="placeholder">Drag Element inside</div>
+                </div>
+                <div class="area area6">
+                  <div class="placeholder">Drag Element inside</div>
+                </div>
+                <div class="area area7">
+                  <div class="placeholder">Drag Element inside</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><span class="btn savenav">Save Menu</span>
       </div>
     </div>
     <div class="sidenav">
-      <nav><a href="dashboard.html">Dashboard</a><a href="posts.html"> <span lang="en">Posts</span><span lang="de">Beiträge</span></a><a href="pages.html"> <span lang="en">Pages</span><span lang="de">Seiten</span></a><a href="themeoptions.html"><span lang="en">Theme Options</span><span lang="de">Theme Optionen</span></a><a href="editconfig.html"><span lang="en">Configuration</span><span lang="de">Konfiguration</span></a></nav>
+      <nav><a href="dashboard.html">Dashboard</a><a href="posts.html"> <span lang="en">Posts</span><span lang="de">Beiträge</span></a><a href="pages.html"> <span lang="en">Pages</span><span lang="de">Seiten</span></a><a href="themeoptions.html"><span lang="en">Theme Options</span><span lang="de">Theme Optionen</span></a><a href="editconfig.html"><span lang="en">Configuration</span><span lang="de">Konfiguration</span></a><a href="sidebar.html">Sidebar</a><a href="navigation.html">Navigation</a></nav>
     </div>
     <div class="popup sitesettings">
       <h1> <span lang="en">Site Settings</span><span lang="de">Seiteneinstellungen</span></h1>
@@ -113,9 +160,11 @@
       </div>
     </div>
     <!-- development (do not ship this)-->
-    <script src="/js/fontawesome-all.js"></script>
-    <script src="/js/jquery-3.1.1.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="js/fontawesome-all.js"></script>
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="node_modules/trumbowyg/dist/trumbowyg.min.js"></script>
+    <script src="js/main.min.js"></script>
     <!-- production (compile scripts.min.js before shipping)-->
     <!-- script(src="/js/scripts.min.js")-->
   </body>

@@ -9,6 +9,7 @@
     <meta name="author" content="#{page.author}">
     <meta name="keywords" content="#{page.tags}">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="node_modules/trumbowyg/dist/ui/trumbowyg.min.css">
   </head>
   <!-- head end-->
   <body class="Index">
@@ -165,9 +166,11 @@
       </div>
     </div>
     <!-- development (do not ship this)-->
-    <script src="/js/fontawesome-all.js"></script>
-    <script src="/js/jquery-3.1.1.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="js/fontawesome-all.js"></script>
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="node_modules/trumbowyg/dist/trumbowyg.min.js"></script>
+    <script src="js/main.min.js"></script>
     <!-- production (compile scripts.min.js before shipping)-->
     <!-- script(src="/js/scripts.min.js")-->
   </body>

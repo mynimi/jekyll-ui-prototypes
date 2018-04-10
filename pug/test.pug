@@ -1,18 +1,8 @@
--
-  var movieList = [
-    {
-      title: "Ocean's Eleven",
-      rating: 9.2
-    }, {
-      title: "Pirates of the Caribbean",
-      rating: 9.7
-    }
-  ];
+extends layout.pug
 
-mixin movie-card(movie)
-  h2.movie-title= movie.title
-  div.rating
-    p= movie.rating
+block vars
+    - var page = { title: "Posts", subtitle: "Test", author: "author", description: "description", tags: ["tag1", "tag2", "tag3"] }
+    include includes/postlist.pug
 
-for movie in movieList
-  +movie-card(movie)
+block content
+  div#trumbowyg-demo

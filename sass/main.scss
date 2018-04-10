@@ -1,17 +1,3 @@
 $palette: light;
 
-@import "toolbox/all";
-@import "base/settings";
-@import "base/typography";
-
-@import "base/reset";
-
-@import "partials/general";
-@import "partials/popup";
-@import "partials/tabs";
-@import "partials/inputs";
-@import "partials/cards";
-@import "partials/sidenav";
-@import "partials/table";
-
-@import "partials/tobetakencareof";
+@import "imports";

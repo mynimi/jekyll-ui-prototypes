@@ -1,0 +1,83 @@
+.areas{
+    margin: 20px 0;
+    @include flexbox(row, nowrap, space-between, flex-start);
+    .area{
+        width: 100%;
+        padding: 10px;
+        margin: 3px;
+        border: $dragdroparea-border;
+        position: relative;
+        min-height: 50px;
+
+        .menu-element{
+            max-width: 100%;
+            margin: 3px 0;
+            margin-left: 10px;
+
+            &:nth-child(2){
+                margin-left: 3px;
+            }
+
+            .delete,
+            .edit{
+                display: inline-block;
+            }
+        }
+
+        .placeholder{
+            font-size: .8em;
+            position: absolute;
+            top: 0;
+            left: 5px;
+            background: $card-background;
+            transform: translateY(-50%);
+            padding: 0 3px;
+        }
+    }
+}
+
+.pages{
+    @include flexbox(row, wrap, flex-start, flex-start);
+    h4{
+        width: 100%;
+    }
+}
+.menu-element{
+    cursor: move;
+    padding: 7px 10px;
+    display: inline-block;
+    margin: 3px;
+    box-sizing: border-box;
+    border: 1px solid $accent;
+    border-radius: 3px;
+    width: auto;
+    height: auto !important;
+    @include flexbox(row, wrap, space-between, center);
+    font-size: .8em;
+    .title{
+        min-width: calc(100% - 65px);
+    }
+    .edit,
+    .delete{
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        display: inline-block;
+        background: $accent;
+        color: black-or-white($accent);
+        border-radius: 50%;
+        font-size: .65em;
+        display: none;
+        cursor: pointer;
+    }
+    .delete{
+        background: red;
+        color: white;
+    }
+
+    .edit-name{
+        width: 100%;
+        display: none;
+    }
+}

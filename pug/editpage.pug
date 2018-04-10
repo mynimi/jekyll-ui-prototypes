@@ -1,0 +1,65 @@
+extends layout.pug
+
+block vars
+    - var page = { title: "pages", subtitle: "Test", author: "author", description: "description", tags: ["tag1", "tag2", "tag3"] }
+
+block content
+    .middle
+        h1
+            span(lang="en") Edit Page
+            span(lang="de") Seite Bearbeiten
+    .cards-alt
+        .main
+            .card
+                .card-content
+                    form
+                        .wrap
+                            label(for="edit-title")
+                                span(lang="en") Title
+                                span(lang="de") Titel
+                            input(type="text" name="edit-title" id="edit-title")
+                        .wrap
+                            label(for="edit-content-html")
+                                span(lang="en") Content
+                                span(lang="de") Inhalt
+                            textarea(type="text" name="edit-content-html" id="edit-content-html")
+        .secondary
+            .card
+                .card-content
+                    h2 Meta
+                    .wrap
+                        label(for="edit-description")
+                            span(lang="en") Meta Description
+                            span(lang="de") Meta Beschreibung
+                        input(type="text" name="edit-description" id="edit-description")
+                    div.radio.input
+                        .label Layout
+                        input(type="radio" name="edit-layout" id="full" value="full")
+                        label(for="full")
+                            span(lang="en") No Sidebar
+                            span(lang="de") Keine Sidebar
+                        br
+                        input(type="radio" name="edit-layout" id="left" value="left")
+                        label(for="left")
+                            span(lang="en") Sidebar Left
+                            span(lang="de") Sidebar Links
+                        br
+                        input(type="radio" name="edit-layout" id="right" value="right")
+                        label(for="right")
+                            span(lang="en") Sidebar Right
+                            span(lang="de") Sidebar Rechts
+            .card
+                .card-content
+                    h2 Includes
+    a.btn(href="pages.html").preview
+        span(lang="en") Preview
+        span(lang="de") Vorschau
+    a.btn(href="pages.html").publishedit
+        span(lang="en") Publish
+        span(lang="de") Publizieren
+    a.btn(href="pages.html").savedraft
+        span(lang="en") Save Draft
+        span(lang="de") Entwurf speichern
+    a.btn(href="pages.html").cancel
+        span(lang="en") Cancel
+        span(lang="de") Abbrechen
