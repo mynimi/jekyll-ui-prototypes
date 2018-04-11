@@ -17,7 +17,7 @@ $(document).ready(function() {
                 article += '<img src="img/'+this.featuredImage+'">';
             }
             article += '<div class="content">';
-            article += '<div class="post-title">'
+            article += '<div class="post-title">';
             article += '<h2>'+this.title+'</h2>';
             article += '</div>';
             article += '<div class="post-tags"><i class="fas fa-tag"></i>'+tags+'</div>';

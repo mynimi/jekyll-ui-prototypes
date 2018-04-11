@@ -8,6 +8,7 @@
 // @prepros-append frontend.js
 
 // @prepros-append popup.js
+// @prepros-append media.js
 // @prepros-append dragndrop.js
 // @prepros-append form.js
 // @prepros-append cookie.js
