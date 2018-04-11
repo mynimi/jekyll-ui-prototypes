@@ -19,25 +19,25 @@
     <div class="container">
       <div class="middle">
         <h1><span lang="en">Theme Options</span><span lang="de">Theme Optionen</span></h1>
-        <div class="cardholder">
+        <div class="cards">
           <div class="card">
             <div class="card-content">
               <h2><span lang="en">Dimensions</span><span lang="de">Dimensionen</span></h2>
               <form>
                 <div class="wrap">
-                  <label for="root-font-size"><span lang="en">Root Font Size [in px]</span><span lang="de">Grundschriftgrösse [in px]</span></label>
+                  <label for="root-font-size"><span lang="en">Root Font Size [px]</span><span lang="de">Grundschriftgrösse [px]</span></label>
                   <input type="number" value="16" name="root-font-size" id="root-font-size">
                 </div>
                 <div class="wrap">
-                  <label for="main-container-width"><span lang="en">Main Container Width [in %]</span><span lang="de">Hauptcontainer Breite [in %]</span></label>
+                  <label for="main-container-width"><span lang="en">Main Container Width [%]</span><span lang="de">Hauptcontainer Breite [%]</span></label>
                   <input type="number" value="80" min="1" max="100" name="main-container-width" id="main-container-width">
                 </div>
                 <div class="wrap">
-                  <label for="main-max-width"><span lang="en">Main Container Max Width [in px]</span><span lang="de">Maximalbreite Hauptcontainer [in px]</span></label>
+                  <label for="main-max-width"><span lang="en">Main Container Max Width [px]</span><span lang="de">Maximalbreite Hauptcontainer [px]</span></label>
                   <input type="number" value="900" name="main-max-width" id="main-max-width">
                 </div>
                 <div class="wrap">
-                  <label for="gutter-width"><span lang="en">Gutter Width [in px]</span><span lang="de">Gutter [in px]</span></label>
+                  <label for="gutter-width"><span lang="en">Gutter Width [px]</span><span lang="de">Gutter [px]</span></label>
                   <input type="number" value="20" name="gutter-width" id="gutter-width">
                 </div>
               </form>
@@ -71,16 +71,8 @@
               <h2><span lang="en">Looks</span><span lang="de">Optik</span></h2>
               <form>
                 <div class="wrap">
-                  <label for="logo">Logo</label>
-                  <input type="file" name="logo" id="logo">
-                </div>
-                <div class="wrap">
-                  <label for="favicon">Favicon</label>
-                  <input type="file" name="favicon" id="favicon">
-                </div>
-                <div class="wrap">
-                  <label for="header">Header</label>
-                  <input type="file" name="header" id="header">
+                  <label class="up" for="header">Featured Image</label>
+                  <div class="header media-chooser" style="padding: 10px;"><img></div><a class="btn" data-togglepopup="media">Choose File</a>
                 </div>
                 <div class="radio input">
                   <div class="label">Layout</div>
@@ -102,7 +94,7 @@
     </div>
     <div class="sidenav">
       <nav><a href="dashboard.html">Dashboard</a><a href="posts.html"> <span lang="en">Posts</span><span lang="de">Beiträge</span></a><a href="pages.html"> <span lang="en">Pages</span><span lang="de">Seiten</span></a><a href="themeoptions.html"><span lang="en">Theme Options</span><span lang="de">Theme Optionen</span></a><a href="editconfig.html"><span lang="en">Configuration</span><span lang="de">Konfiguration</span></a><a href="sidebar.html">Sidebar</a><a href="navigation.html">Navigation</a></nav>
-      <nav style="margin-top: 20px; padding-top: 20px; border-top: 2px solid currentColor;"><a href="prev-index.html">Live Preview</a><a class="live" href="#"><span lang="en">Go to Website</span><span lang="de">Website öffnen</span></a><a class="site" href="#" data-togglepopup="sitesettings"> <span lang="en">Site Settings</span><span lang="de">Seiteneinstellungen</span></a><a class="app" href="#" data-togglepopup="appsettings"> <span lang="en">App Settings</span><span lang="de">App Einstellungen</span></a></nav>
+      <nav style="margin-top: 20px; padding-top: 20px; border-top: 2px solid currentColor;"><a href="prev-index.html" target="_blank">Live Preview</a><a class="live" href="#"><span lang="en">Go to Website</span><span lang="de">Website öffnen</span></a><a class="site" href="#" data-togglepopup="sitesettings"> <span lang="en">Site Settings</span><span lang="de">Seiteneinstellungen</span></a><a class="app" href="#" data-togglepopup="appsettings"> <span lang="en">App Settings</span><span lang="de">App Einstellungen</span></a></nav>
     </div>
     <div class="popup sitesettings">
       <h1> <span lang="en">Site Settings</span><span lang="de">Seiteneinstellungen</span></h1>
@@ -197,6 +189,19 @@
     <script src="js/jquery-3.1.1.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <script src="node_modules/trumbowyg/dist/trumbowyg.min.js"></script>
+    <!-- script(src="js/settings.js")-->
+    <!-- script(src="js/posts.js")-->
+    <!-- script(src="js/pages.js")-->
+    <!-- script(src="js/theme_options.js")-->
+    <!-- script(src="js/edit_config.js")-->
+    <!-- script(src="js/sidebar.js")-->
+    <!-- script(src="js/menubuilder.js")-->
+    <!-- script(src="js/frontend.js")-->
+    <!-- script(src="js/popup.js")-->
+    <!-- script(src="js/media.js")-->
+    <!-- script(src="js/dragndrop.js")-->
+    <!-- script(src="js/form.js")-->
+    <!-- script(src="js/cookie.js")-->
     <script src="js/main.min.js"></script>
     <!-- production (compile scripts.min.js before shipping)-->
     <!-- script(src="/js/scripts.min.js")-->

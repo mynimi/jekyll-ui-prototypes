@@ -41,17 +41,26 @@
     .area{
         width: 100%;
         margin: 10px 0;
-        
+
         .widget{
             width: 100%;
+            margin: 20px 0;
+
             @include flexbox(row, wrap, space-between, center);
 
             h3 {
                 min-width: calc(100% - 65px);
+                .title{
+                    font-weight: normal;
+                }
             }
 
             .delete,
             .edit{
+                display: inline-block;
+            }
+
+            .widget-config{
                 display: inline-block;
             }
         }

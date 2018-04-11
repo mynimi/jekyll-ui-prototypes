@@ -5,7 +5,7 @@
         "description": "A post celebrating the beauty of cake.",
         "date": "2018-02-02",
         "layout": "full",
-        "featuredImage": "alex-loup-459984-unsplash.jpg",
+        "featuredImage": "img/alex-loup-459984-unsplash.jpg",
         "tags": ["one", "two", "three"],
         "status": "published",
         "content": "<h1>A H1 Title</h1><h2>Heading 2</h2><h3>Heading 3</h3><p>Some short Test content.</p><p><b>bold</b><i>italic</i></p>"
@@ -15,7 +15,7 @@
         "description": "coffee to go please",
         "date": "2018-02-03",
         "layout": "left",
-        "featuredImage": "jennifer-pallian-173715-unsplash.jpg",
+        "featuredImage": "img/jennifer-pallian-173715-unsplash.jpg",
         "tags": ["one", "two", "three"],
         "status": "published",
         "content": "Some short Test content."
@@ -25,7 +25,7 @@
         "description": "Cream Puffs for life",
         "date": "2018-02-04",
         "layout": "right",
-        "featuredImage": "jordane-mathieu-539935-unsplash.jpg",
+        "featuredImage": "img/jordane-mathieu-539935-unsplash.jpg",
         "tags": ["one", "two", "three"],
         "status": "published",
         "content": "Some short Test content."
@@ -35,7 +35,7 @@
         "description": "Layers of Joy",
         "date": "2018-02-01",
         "layout": "full",
-        "featuredImage": "taylor-kiser-373463-unsplash.jpg",
+        "featuredImage": "img/taylor-kiser-373463-unsplash.jpg",
         "tags": ["one", "two", "three"],
         "status": "published",
         "content": "Some short Test content."

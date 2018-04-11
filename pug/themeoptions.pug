@@ -9,7 +9,7 @@ block content
         h1
             span(lang="en") Theme Options
             span(lang="de") Theme Optionen
-        .cardholder
+        .cards
             .card
                 .card-content
                     h2
@@ -18,23 +18,23 @@ block content
                     form
                         .wrap
                             label(for="root-font-size")
-                                span(lang="en") Root Font Size [in px]
-                                span(lang="de") Grundschriftgrösse [in px]
+                                span(lang="en") Root Font Size [px]
+                                span(lang="de") Grundschriftgrösse [px]
                             input(type="number" value="16" name="root-font-size" id="root-font-size")
                         .wrap
                             label(for="main-container-width")
-                                span(lang="en") Main Container Width [in %]
-                                span(lang="de") Hauptcontainer Breite [in %]
+                                span(lang="en") Main Container Width [%]
+                                span(lang="de") Hauptcontainer Breite [%]
                             input(type="number" value="80" min="1" max="100" name="main-container-width" id="main-container-width")
                         .wrap
                             label(for="main-max-width")
-                                span(lang="en") Main Container Max Width [in px]
-                                span(lang="de") Maximalbreite Hauptcontainer [in px]
+                                span(lang="en") Main Container Max Width [px]
+                                span(lang="de") Maximalbreite Hauptcontainer [px]
                             input(type="number" value="900" name="main-max-width" id="main-max-width")
                         .wrap
                             label(for="gutter-width")
-                                span(lang="en") Gutter Width [in px]
-                                span(lang="de") Gutter [in px]
+                                span(lang="en") Gutter Width [px]
+                                span(lang="de") Gutter [px]
                             input(type="number" value="20" name="gutter-width" id="gutter-width")
             .card
                 .card-content
@@ -69,14 +69,10 @@ block content
                         span(lang="de") Optik
                     form
                         .wrap
-                            label(for="logo") Logo
-                            input(type="file" name="logo" id="logo")
-                        .wrap
-                            label(for="favicon") Favicon
-                            input(type="file" name="favicon" id="favicon")
-                        .wrap
-                            label(for="header") Header
-                            input(type="file" name="header" id="header")
+                            label.up(for="header") Featured Image
+                            .header.media-chooser(style="padding: 10px;")
+                                img
+                            a.btn(data-togglepopup="media") Choose File
                         div.radio.input
                             .label Layout
                             input(type="radio" name="main-layout" id="full" value="full" checked)

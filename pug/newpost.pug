@@ -54,9 +54,10 @@ block content
                             span(lang="en") Sidebar Right
                             span(lang="de") Sidebar Rechts
                     .wrap
-                        label(for="create-featimg") Featured Image
-                        .feat-img(style="padding: 10px;")
-                        input(type="file" name="create-featimg" id="create-featimg")
+                        label.up(for="create-featimg") Featured Image
+                        .feat-img.media-chooser(style="padding: 10px;")
+                            img
+                        a.btn(data-togglepopup="media") Choose File
                     .wrap
                         label(for="create-tags") Tags
                         input(type="text" name="create-tags" id="create-tags")

@@ -6,27 +6,18 @@
     .header{
         border: 3px solid black;
         width: 100%;
-        min-height: 80px;
-    }
-    .accent-color{
-        color: $accent;
-    }
-    .accent-bg{
-        color: black-or-white($accent);
-        background: $accent;
     }
     .main-wrapper{
         @include flexbox(row, wrap, space-between, flex-start);
-        max-width: 90%;
         margin: 80px auto;
 
         > .content{
-            width: calc(100% - 320px);
+            width: calc(100% - 33%);
             border: 3px solid black;
         }
     }
     .sidebar{
-        width: 300px;
+        width: 30%;
         border: 3px solid black;
         &:before{
             content: 'sidebar';

@@ -15,34 +15,43 @@ block content
                         span(lang="de") Verfügbare Widgets
                     .widgets
                         .widget.html.dragable 
-                            h3 Text
+                            h3 Text <span class="title"></span>
                             span.edit
                                 i.fas.fa-edit 
                             span.delete 
                                 i.fas.fa-trash-alt 
                             .widget-config
                                 .wrap
-                                    label(for="edit-content-html-widget")
-                                        span(lang="en") Content
-                                        span(lang="de") Inhalt
+                                    label(for="edit-title-html-widget")
+                                        span(lang="en") Title
+                                        span(lang="de") Titel
+                                    input(type="text" name="edit-title-html-widget" id="edit-title-html-widget")
+                                .wrap
+                                    label(for="edit-content-html-widget") HTML
                                     textarea(type="text" name="edit-content-html-widget" id="edit-content-html-widget")
-                                span.btn.apply
-                                    span(lang="en") Apply
+                                span.btn.savesidebar
+                                    span(lang="en") Save
                                     span(lang="de") Speichern
                         .widget.fb.dragable
                             h3 
                                 span(lang="en") Facebook Page
                                 span(lang="de") Facebook Seite
+                                span.title
                             span.edit
                                 i.fas.fa-edit 
                             span.delete 
                                 i.fas.fa-trash-alt 
                             .widget-config
                                 .wrap
+                                    label(for="fb-widget-title")
+                                        span(lang="en") Title
+                                        span(lang="de") Titel
+                                    input(type="text" name="fb-widget-title" id="fb-widget-title")
+                                .wrap
                                     label(for="fb-url") URL
                                     input(type="url" name="fb-url" id="fb-url")
                                         //- | <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
-                                span.btn.apply
+                                span.btn.savesidebar
                                     span(lang="en") Apply
                                     span(lang="de") Speichern            
             .card
@@ -53,7 +62,6 @@ block content
                             .placeholder
                                 span(lang="en") Drag Widget into Area to Add to Sidebar 1
                                 span(lang="de") Ziehe Widgets in diesen Bereich um hinzuzufügen
-        span.btn.savesidebar Save
 
 block additional
     #fb-root

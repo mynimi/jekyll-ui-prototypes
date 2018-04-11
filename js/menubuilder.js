@@ -1,4 +1,4 @@
-$(document).ready(function() {
+if (~window.location.pathname.indexOf("navigation")) {
     if(getCookie("navigation")){
         console.log('nav cookie exists');
         var i,
@@ -26,7 +26,7 @@ $(document).ready(function() {
             if(this.parent){
                 console.log(this.title);
                 console.log(this.children);
-                children = this.children;
+                var children = this.children;
                 $.each(children, function(i){
                     console.log(this.title);
                     var id = 'edit-title-'+this.title,
@@ -52,7 +52,6 @@ $(document).ready(function() {
     } else {
 
     }
-
     $('.savenav').click(function(){
         var nav = {},
             i;
@@ -101,5 +100,4 @@ $(document).ready(function() {
         $(this).parent().slideToggle();
     });
 
-
-});
+}
