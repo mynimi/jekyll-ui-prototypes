@@ -49,8 +49,7 @@ block content
                                     input(type="text" name="fb-widget-title" id="fb-widget-title")
                                 .wrap
                                     label(for="fb-url") URL
-                                    input(type="url" name="fb-url" id="fb-url")
-                                        //- | <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
+                                    input(type="url" name="fb-url" id="fb-url" placeholder="https://www.facebook.com/facebook")
                                 span.btn.savesidebar
                                     span(lang="en") Apply
                                     span(lang="de") Speichern            
@@ -64,5 +63,3 @@ block content
                                 span(lang="de") Ziehe Widgets in diesen Bereich um hinzuzufügen
 
 block additional
-    #fb-root
-    script (function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));

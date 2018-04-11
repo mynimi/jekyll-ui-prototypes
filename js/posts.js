@@ -91,7 +91,7 @@ if (~window.location.pathname.indexOf("editpost")) {
         $('input[name="edit-description"]').val(cp.description);
         $('input[name="edit-date"]').val(cp.date);
         $('input[name="edit-layout"][value="' + cp.layout + '"]').prop('checked', true);
-        $('.feat-img').append('<img src="' + cp.featuredImage + '">');
+        $('.media-chooser img').attr('src', cp.featuredImage);
         $('input[name="edit-tags"]').val(cp.tags);
     }
     $('.publishedit').click(function(e) {
@@ -179,7 +179,7 @@ if (~window.location.pathname.indexOf("newpost")) {
             np.description = $('input[name="create-description"]').val();
             np.date = $('input[name="create-date"]').val();
             np.layout = $('input[name="create-layout"]:checked').val();
-            np.featuredImage = $('input[name="create-featimg"]').val().split('\\').pop();
+            np.featuredImage = $('.media-chooser img').attr('src');
             np.tags = $('input[name="create-tags"]').val().split(',');
             np.status = 'draft';
             np.content = $('textarea[name*="create-content"]').trumbowyg('html');

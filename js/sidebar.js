@@ -3,6 +3,7 @@
 if(getCookie("sidebar")){
     var i,
         sidebar = JSON.parse(getCookie("sidebar"));
+    console.log(sidebar);
     $.each(sidebar, function(i){
         var counter = parseInt(i),
             item = '<div class="'+this.type+' widget dragable ui-draggable ui-draggable-handle clone">';
@@ -75,8 +76,8 @@ $('.area').on('click', '.savesidebar', function(){
         i;
     $('.sidebar-areas .area').each(function(){
         if($(this).children('.widget').length){
-            var item = {};
-            $(this).children('.widget').each(function(){
+            $(this).children('.widget').each(function(i){
+                var item = {};
                 var classes = $(this).attr('class');
                 if(classes.indexOf("fb") >= 0){
                     item.type = 'fb';
@@ -84,7 +85,7 @@ $('.area').on('click', '.savesidebar', function(){
                 if(classes.indexOf("html") >= 0){
                     item.type = 'html';
                 }
-                var inputs = $(".area .clone").draggable("widget").find('input');
+                var inputs = $(this).draggable("widget").find('input, textarea');
                 inputs.each(function(){
                     if($(this).is('[name*="title"]')){
                         item.title = $(this).val();
@@ -101,7 +102,7 @@ $('.area').on('click', '.savesidebar', function(){
                         }
                     }
                 });
-                sidebar[i+1] = item;
+                sidebar[i] = item;
                 console.log(item);
             });
         }

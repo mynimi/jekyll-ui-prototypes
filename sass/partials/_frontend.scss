@@ -4,23 +4,52 @@
         box-sizing: border-box;
     }
     .header{
-        border: 3px solid black;
         width: 100%;
+        height: 55vh;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-color: rgba(black, .1);
+
+        .site-title{
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            font-size: 3em;
+            text-transform: uppercase;
+
+            h1{
+                line-height: .7em;
+                margin: 0;
+                padding: 0;
+            }
+        }
     }
     .main-wrapper{
         @include flexbox(row, wrap, space-between, flex-start);
-        margin: 80px auto;
+        margin: 30px auto;
 
         > .content{
             width: calc(100% - 33%);
-            border: 3px solid black;
+            padding: 0;
         }
     }
     .sidebar{
         width: 30%;
-        border: 3px solid black;
-        &:before{
-            content: 'sidebar';
+        .widget{
+            width: 100%;
+            padding: 10px;
+            margin: 0;
+            margin-bottom: 10px;
+            display: block;
+            border-radius: 0;
+            background: white;
+            text-align: center;
+
+            .title{
+                text-transform: uppercase;
+            }
+
         }
     }
     &.full{
@@ -44,9 +73,13 @@
 
     article{
         @include flexbox(row, wrap, space-between, flex-start);
-        border: 2px solid black;
-        margin: 20px;
+        margin: 20px 0;
         position: relative;
+        background: white;
+
+        &:nth-of-type(even){
+            flex-direction: row-reverse;
+        }
         .date{
             position: absolute;
             bottom: 3px;
@@ -57,13 +90,11 @@
         }
         .content{
             width: 70%;
-
         }
         .post-title{
             text-transform: uppercase;
-            border-bottom: 2px solid black;
-            padding: 10px;
-
+            padding: 0 10px;
+            margin-top: 20px;
             h2{
                 font-size: 3.5em;
             }
@@ -72,15 +103,18 @@
             padding: 10px;
             font-size: .7em;
         }
-        .content{
+        .post-content{
             padding: 10px;
         }
     }
 }
 .navbar{
-    width: 100%;
-    border: 3px solid black;
-    @include flexbox(row, wrap, center, center);
+    width: 80%;
+    @include flexbox(row, wrap, flex-start, center);
+    font-size: 1.2em;
+    margin: 10px auto;
+    font-weight: bold;
+    text-transform: uppercase;
 
     .parent,
     a{
@@ -95,6 +129,6 @@
         top: 100%;
         left: 0;
         width: auto;
-        border: 3px solid black;
+        border-left: 3px solid black;
     }
 }
