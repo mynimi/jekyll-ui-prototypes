@@ -2,6 +2,9 @@ if (!getCookie('siteSettings')) {
     var siteSettings = {};
 }
 
+$('.publishsite').click(function(){
+    alert('Site Published');
+});
 // LANGUAGE
 //----------
 // if language not set, set to english, else get cookie

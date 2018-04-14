@@ -33,3 +33,21 @@
     z-index: 98;
     cursor: pointer;
 }
+
+.close{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+
+.appsettings{
+    .checkbox {
+        opacity: .5;
+        cursor: not-allowed;
+    }
+    [name="advancedview"], [for="advancedview"]{
+        cursor: not-allowed;
+    }
+}

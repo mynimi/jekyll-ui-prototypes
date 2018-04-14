@@ -1,7 +1,7 @@
 extends layout.pug
 
 block vars
-    - var page = { title: "Posts", subtitle: "Test", author: "author", description: "description", tags: ["tag1", "tag2", "tag3"] }
+    - var page = { title: "Create New Post" }
 
 block content
     .middle
@@ -61,9 +61,6 @@ block content
                     .wrap
                         label(for="create-tags") Tags
                         input(type="text" name="create-tags" id="create-tags")
-            .card
-                .card-content
-                    h2 Includes
     a.btn(href="posts.html").publishpost
         span(lang="en") Publish
         span(lang="de") Publizieren

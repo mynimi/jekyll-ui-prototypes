@@ -6,8 +6,10 @@ $('[data-togglepopup]').each(function() {
         $('body').append('<div class="behind-popup"></div>');
     });
 });
-$('body').on('click tap', '.behind-popup', function() {
+$('body').on('click tap', '.behind-popup, .close', function() {
     $('body').removeClass('popup-open');
     $('.popup').fadeOut();
-    $(this).remove();
+    $('.behind-popup').remove();
 });
+
+$('.popup').prepend('<span class="close"><i class="fas fa-times"></i></span>');
