@@ -38,6 +38,9 @@ if(getCookie("posts")){
             postItems.push('<tr><td>' + this.id + '</td><td>' + this.title + '</td><td>' + tags + '</td><td>' + this.date + '</td><td>' + this.status + '</td><td><a class="editpost btn" href="editpost.html" data-edit-post-id="' + this.id + '">Edit</a><a class="deletepost btn" href="#" data-delete-post-id="' + this.id + '">Delete</a><a class="duplicatepost btn" href="#" data-duplicate-post-id="' + this.id + '">Duplicate</a></td></tr>');
         });
 
+        console.log('there are '+posts.length+' posts.');
+        setCookie('PostsTotal', Object.keys(posts).length, 1);
+
         setCookie("posts", JSON.stringify(posts), 1);
         posts = JSON.parse(getCookie("posts"));
     });
@@ -69,15 +72,22 @@ if(~window.location.pathname.indexOf("posts")){
         posts = JSON.parse(getCookie("posts"));
         var id = $(this).data('duplicate-post-id');
         var p = posts["post" + id];
-        var postCount = Object.keys(posts).length;
+        var postCount = parseInt(getCookie('PostsTotal'));
 
-        posts["post"+(postCount+1)] = p;
-
-        posts["post"+(postCount+1)].id = postCount + 1;
-
-        console.log(posts);
+        var nP = {};
+        nP.id = postCount + 1;
+        nP.title = p.title;
+        nP.description = p.description;
+        nP.date = p.date;
+        nP.layout = p.layout;
+        nP.featuredImage = p.featuredImage;
+        nP.tags = p.tags;
+        nP.status = p.status;
+        nP.content = p.content;
+        posts["post" + nP.id] = nP;
 
         setCookie("posts", JSON.stringify(posts), 1);
+        setCookie("PostsTotal", postCount+1, 1);
         location.reload();
     });
 }
@@ -136,6 +146,8 @@ if (~window.location.pathname.indexOf("editpost")) {
 if (~window.location.pathname.indexOf("newpost")) {
     var date = new Date();
     $('input[type="date"]').val(date.toISOString().split('T')[0]);
+    var o = JSON.parse(getCookie("themeOptions"));
+    $('input[name="create-layout"][value="' + o.layout + '"]').prop('checked', true);
 
     $('.publishpost').click(function(e) {
         // e.preventDefault();

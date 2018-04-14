@@ -24,6 +24,8 @@ if(getCookie("pages")){
             pageItems.push('<tr><td>' + this.id + '</td><td>' + this.title + '</td><td>' + this.status + '</td><td><a class="editpage btn" href="editpage.html" data-edit-page-id="' + this.id + '">Edit</a><a class="deletepage btn" href="#" data-delete-page-id="' + this.id + '">Delete</a><a class="duplicatepage btn" href="#" data-duplicate-page-id="' + this.id + '">Duplicate</a></td></tr>');
         });
 
+        setCookie('pagesTotal', Object.keys(posts).length, 1);
+
         setCookie("pages", JSON.stringify(pages), 1);
         pages = JSON.parse(getCookie("pages"));
     });
@@ -55,15 +57,20 @@ if(~window.location.pathname.indexOf("pages")){
         pages = JSON.parse(getCookie("pages"));
         var id = $(this).data('duplicate-page-id');
         var p = pages["page" + id];
-        var pageCount = Object.keys(pages).length;
+        var postCount = parseInt(getCookie('pagesTotal'));
 
-        pages["page"+(pageCount+1)] = p;
+        var nP = {};
+        nP.id = postCount + 1;
+        nP.title = p.title;
+        nP.description = p.description;
+        nP.layout = p.layout;
+        nP.status = p.status;
+        nP.content = p.content;
+        pages["page" + nP.id] = nP;
 
-        pages["page"+(pageCount+1)].id = pageCount + 1;
-
-        console.log(pages);
 
         setCookie("pages", JSON.stringify(pages), 1);
+        setCookie("pagesTotal", postCount+1, 1);
         location.reload();
     });
 }
@@ -112,6 +119,9 @@ if (~window.location.pathname.indexOf("editpage")) {
 }
 
 if (~window.location.pathname.indexOf("newpage")) {
+    var o = JSON.parse(getCookie("themeOptions"));
+    $('input[name="create-layout"][value="' + o.layout + '"]').prop('checked', true);
+
     $('.publishpage').click(function(e) {
         // e.preventDefault();
 
