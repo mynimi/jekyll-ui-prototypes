@@ -1,3 +1,19 @@
+$('header b').click(function(){
+    if(confirm('Do you Really Want to Delete All Things You Changed?')){
+        document.cookie = 'themeOptions' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT, path=/;';
+        document.cookie = 'sidebar' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT, path=/;';
+        document.cookie = 'siteSettings' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT, path=/;';
+        document.cookie = 'skin' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT, path=/;';
+        document.cookie = 'language' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT, path=/;';
+        document.cookie = 'posts' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT, path=/;';
+        document.cookie = 'postsTotal' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT, path=/;';
+        document.cookie = 'currentEdit' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT, path=/;';
+        document.cookie = 'pages' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT, path=/;';
+        document.cookie = 'pagesTotal' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT, path=/;';
+        document.cookie = 'navigation' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT, path=/;';
+        document.cookie = 'siteConfig' + '=; expires=Thu, 01-Jan-70 00:00:01 GMT, path=/;';
+    }
+});
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
